@@ -1,0 +1,38 @@
+{
+    "set1": {
+        "question": "Type of property?",
+        "answers": [
+            {"answerText": "Single-family house — from 1600 EUR", "answerRating": "5"},
+            {"answerText": "Apartment building — from 2600 EUR", "answerRating": "5"},
+            {"answerText": "Commercial property — from 3400 EUR", "answerRating": "5"},
+            {"answerText": "Special?", "answerRating": "5"}
+        ]
+    },
+    "set2": {
+        "question": "Placeholder question2?",
+        "answers": [
+            {"answerText": "Placeholder answer", "answerRating": "5"},
+            {"answerText": "Placeholder answer", "answerRating": "3"},
+            {"answerText": "Placeholder answer", "answerRating": "4"},
+            {"answerText": "Placeholder answer", "answerRating": "1"}
+        ]
+    },
+    "set3": {
+        "question": "Placeholder question3?",
+        "answers": [
+            {"answerText": "Placeholder answer", "answerRating": "5"},
+            {"answerText": "Placeholder answer", "answerRating": "3"},
+            {"answerText": "Placeholder answer", "answerRating": "4"},
+            {"answerText": "Placeholder answer", "answerRating": "1"}
+        ]
+    },
+    "set4": {
+        "question": "Placeholder question4?",
+        "answers": [
+            {"answerText": "Placeholder answer", "answerRating": "5"},
+            {"answerText": "Placeholder answer", "answerRating": "3"},
+            {"answerText": "Placeholder answer", "answerRating": "4"},
+            {"answerText": "Placeholder answer", "answerRating": "1"}
+        ]
+    }
+}
