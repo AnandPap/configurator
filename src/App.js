@@ -11,7 +11,6 @@ function App() {
   const [welcomeScreenClassName, setWelcomeScreenClassName] = useState(
     "fade-in-from-center"
   );
-  const [evaluation, setEvaluation] = useState(0);
 
   useEffect(() => {
     console.log(selectedOptions);
@@ -25,7 +24,9 @@ function App() {
   return (
     <div className="App">
       <div className={`${welcomeScreenClassName} absolutely-positioned`}>
-        <h1 className="">How much will the facade cleaning cost you?</h1>
+        <h1 className="welcome-screen-heading">
+          How much will the facade cleaning cost you?
+        </h1>
         <p className="initial-text">
           We are the right partner when it comes to the professional cleaning of
           plaster, clinker, eternit and metal on building facades. The company
@@ -47,7 +48,6 @@ function App() {
       {Object.values(data).map((element, i) => (
         <Question
           element={element}
-          setEvaluation={setEvaluation}
           key={i}
           selectedOptions={selectedOptions}
           setSelectedOptions={setSelectedOptions}

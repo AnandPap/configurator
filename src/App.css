@@ -6,8 +6,8 @@
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
-  --green-background: rgb(110, 190, 70);
-  --blue-background: rgb(45, 145, 205);
+  --green-background: rgb(125, 225, 55);
+  --blue-background: rgb(65, 165, 225);
   --yellow-background: rgb(255, 255, 0);
   --medium-font: 1.5rem;
   --title-font: 3rem;
@@ -21,9 +21,16 @@
 .App {
 }
 
-h1 {
+.welcome-screen-heading {
   font-size: var(--title-font);
-  margin-top: 0%;
+  margin-top: 1%;
+}
+
+.question-heading {
+}
+
+.question-introduction {
+  color: navy;
 }
 
 .initial-text {
@@ -40,9 +47,76 @@ h1 {
   box-shadow: 1px 0 5px 1px black;
 }
 
-.start-button:hover {
-  transform: scale(1.05);
+.start-button:hover,
+.next-button:hover {
+  transform: scale(1.02);
   cursor: pointer;
+}
+
+.next-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-button {
+  background-color: var(--green-background);
+  color: black;
+  padding: 0.55rem 3.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.next-button:hover {
+  background-color: rgb(120, 220, 50);
+}
+
+.next-button-arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 3.5px;
+  display: inline-block;
+  position: relative;
+  left: 40px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.question-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number {
+  width: min-content;
+}
+
+.back-button-wrapper {
+  flex-grow: 1;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: navy;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button-arrow {
+  border: solid navy;
+  border-width: 0 2px 2px 0;
+  padding: 3.5px;
+  display: inline-block;
+  position: relative;
+  right: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .hide {
@@ -51,8 +125,8 @@ h1 {
 
 .absolutely-positioned {
   position: absolute;
-  left: 5%;
-  right: 5%;
+  left: 8%;
+  right: 8%;
 }
 
 .fade-out-to-left {
@@ -130,5 +204,12 @@ h1 {
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .absolutely-positioned {
+    left: 5%;
+    right: 5%;
   }
 }
