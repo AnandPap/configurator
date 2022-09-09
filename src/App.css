@@ -19,6 +19,7 @@
 }
 
 .App {
+  position: relative;
 }
 
 .welcome-screen-heading {
@@ -31,6 +32,13 @@
 
 .question-introduction {
   color: navy;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .initial-text {
@@ -57,6 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 .next-button {
@@ -91,6 +100,7 @@
 
 .page-number {
   width: min-content;
+  color: white;
 }
 
 .back-button-wrapper {
@@ -98,7 +108,7 @@
 }
 
 .back-button {
-  background: none;
+  background-color: rgba(0, 0, 0, 0); /*background: none;*/
   border: none;
   color: navy;
   font-weight: 600;
@@ -106,6 +116,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
 }
 
 .back-button-arrow {
@@ -119,14 +135,48 @@
   -webkit-transform: rotate(135deg);
 }
 
+.property-image-wrapper {
+  width: fit-content;
+}
+
+.property-image:hover {
+  box-shadow: 0px 0px 10px 0px black;
+  cursor: pointer;
+}
+
+.property-image {
+  border-radius: 10%;
+}
+
+.answer-circle {
+  border: 2px solid white;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+  left: 10px;
+  bottom: 45px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-circle > p {
+  position: relative;
+}
+
 .hide {
   display: none;
 }
 
 .absolutely-positioned {
-  position: absolute;
-  left: 8%;
-  right: 8%;
+  position: relative;
+  width: 90%;
+  margin: auto;
 }
 
 .fade-out-to-left {
@@ -153,11 +203,13 @@
   0% {
     transform: translateX(0px);
     opacity: 1;
+    position: absolute;
   }
   100% {
     transform: translateX(-500px);
     opacity: 0;
     display: none;
+    position: absolute;
   }
 }
 
@@ -209,7 +261,7 @@
 
 @media only screen and (min-width: 425px) {
   .absolutely-positioned {
-    left: 5%;
-    right: 5%;
+    width: 80%;
+    margin: auto;
   }
 }

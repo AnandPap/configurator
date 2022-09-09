@@ -52,7 +52,7 @@ const Question = ({
       <p className="question-introduction">{element.introduction}</p>
       <div className="answers">
         {element.answers.map((answer, i) =>
-          answer.image ? (
+          answer.imageURL ? (
             <ImageCard
               key={i}
               i={i + 1}

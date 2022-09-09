@@ -3,10 +3,10 @@
         "question": "Art der Immobilie",
         "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
         "answers": [
-            {"imageURL": "./images/1st-slide/1.jpg", "imageTitle": "Einfamilienhaus", "imagePrice": "ab 1600 EUR"},
-            {"answerText": "Apartment building — from 2600 EUR", "answerRating": "5"},
-            {"answerText": "Commercial property — from 3400 EUR", "answerRating": "5"},
-            {"answerText": "Special?", "answerRating": "5"}
+            {"imageURL": "1st-slide/1.jpg", "imageTitle": "Einfamilienhaus", "imagePrice": "ab 1600 EUR"},
+            {"imageURL": "1st-slide/2.jpg", "imageTitle": "5"},
+            {"imageURL": "1st-slide/3.jpg", "imageTitle": "5"},
+            {"imageURL": "1st-slide/4.jpg", "imageTitle": "5"}
         ]
     },
     "set2": {
