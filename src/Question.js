@@ -32,7 +32,7 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   }, [slideNumber]);
   const [questionClassName, setQuestionClassName] = useState("hide");
   return (
-    <div className={`${questionClassName} absolutely-positioned`}>
+    <div className={`${questionClassName}`}>
       <div className="question-header">
         <BackButton
           onClick={() => {
@@ -44,9 +44,9 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
         />
         <p className="page-number">{questionNumber}/5</p>
       </div>
-      <h1>{element.question}</h1>
+      <h1 className="question-heading">{element.question}</h1>
       <p className="question-introduction">{element.introduction}</p>
-      <div className="answers">
+      <div className="answer-images">
         {element.answers.map((answer, i) =>
           answer.imageURL ? (
             <ImageCard
@@ -62,7 +62,12 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
                 });
               }}
             />
-          ) : answer.answerText ? (
+          ) : null
+        )}
+      </div>
+      <div className="answer-buttons">
+        {element.answers.map((answer, i) =>
+          answer.answerText ? (
             <AnswerButton
               key={i}
               i={i + 1}
@@ -74,13 +79,18 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
                 });
               }}
             />
-          ) : (
-            <FormField formFieldTitle={answer.formFieldTitle} />
-          )
+          ) : null
         )}
       </div>
       {element.question === "Dein Info" ? (
-        <NextButton text="SENDEN" />
+        <>
+          <form className="ending-form" onSubmit={() => console.log(5)}>
+            {element.answers.map((answer, i) => (
+              <FormField key={i} formFieldTitle={answer.formFieldTitle} />
+            ))}
+          </form>
+          <NextButton text="SENDEN" />
+        </>
       ) : (
         <NextButton
           onClick={() => {

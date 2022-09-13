@@ -10,8 +10,6 @@ const ImageCard = ({ imageURL, imageTitle, imagePrice, i, onClick }) => {
           src={`${process.env.PUBLIC_URL}/images/${imageURL}`}
           alt=""
           className="property-image"
-          width="180px"
-          height="150px"
         ></img>
         <div className="answer">
           <div className="answer-circle">

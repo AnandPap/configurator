@@ -19,24 +19,28 @@ body {
 }
 
 .App {
-  position: relative;
+  margin: auto;
+  width: 90%;
 }
 
 .welcome-screen-heading {
-  font-size: var(--title-font);
+  font-size: 1.75rem;
 }
 
-.question-introduction {
+.welcome-screen-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-introduction,
+.welcome-screen-introduction {
   color: navy;
 }
 
 .answers {
   display: flex;
   flex-direction: column;
-}
-
-.initial-text {
-  font-size: var(--medium-font);
 }
 
 .question-header {
@@ -51,12 +55,8 @@ body {
 }
 
 .property-image-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
+  width: fit-content;
   height: 150px;
-  width: 180px;
   border-radius: 10%;
   margin-bottom: 25px;
   box-shadow: 0px 0px 10px -5px black;
@@ -69,6 +69,23 @@ body {
 
 .property-image {
   border-radius: 10%;
+  width: 180px;
+  height: 150px;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 300px;
+  bottom: 45px;
+}
+
+.answer-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .answer {
@@ -92,7 +109,7 @@ body {
 }
 
 .answer-circle > p {
-  position: relative;
+  /* position: relative; */
 }
 
 .image-title-and-price-container {
@@ -103,33 +120,56 @@ body {
 .image-price {
   margin: 0;
   text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
+  font-size: 0.9rem;
+}
+
+.ending-form {
+  width: fit-content;
+  margin: 25px auto;
+}
+
+.form-field {
+  margin-top: 25px;
+}
+
+.form-field-title {
+  color: navy;
+  font-size: 1.2rem;
+}
+
+.form-input {
+  background: none;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 10px 0;
+}
+
+.form-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-input:focus {
+  outline: none;
 }
 
 .hide {
   display: none;
 }
-
-.absolutely-positioned {
-  width: 85vw;
-  margin: auto;
-}
-
 .fade-out-to-left {
   animation: fadeOutToLeft var(--fade-time) linear forwards;
 }
-
 .fade-out-to-right {
   animation: fadeOutToRight var(--fade-time) linear forwards;
 }
-
 .fade-in-from-left {
   animation: fadeInFromLeft var(--fade-time) linear forwards;
 }
-
 .fade-in-from-right {
   animation: fadeInFromRight var(--fade-time) linear forwards;
 }
-
 .fade-in-from-center {
   animation: fadeInCenter var(--fade-time) forwards;
 }
@@ -147,7 +187,6 @@ body {
     position: absolute;
   }
 }
-
 @keyframes fadeOutToRight {
   0% {
     transform: translateX(0px);
@@ -160,7 +199,6 @@ body {
     display: none;
   }
 }
-
 @keyframes fadeInFromLeft {
   0% {
     transform: translateX(-500px);
@@ -171,7 +209,6 @@ body {
     opacity: 1;
   }
 }
-
 @keyframes fadeInFromRight {
   0% {
     transform: translateX(500px);
@@ -182,7 +219,6 @@ body {
     opacity: 1;
   }
 }
-
 @keyframes fadeInCenter {
   0% {
     transform: translateY(100px);
@@ -196,8 +232,45 @@ body {
 }
 
 @media only screen and (min-width: 425px) {
-  .absolutely-positioned {
-    width: 80%;
+  .property-image-wrapper {
+    height: 185px;
+    margin-bottom: 35px;
+  }
+  .property-image {
+    width: 225px;
+    height: 185px;
+  }
+  .welcome-screen-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .welcome-screen-introduction {
+    text-align: center;
+  }
+  .welcome-screen-icons {
+    justify-content: space-evenly;
+  }
+  .welcome-screen-icon {
+    width: 100px;
+  }
+  .answer-buttons {
+    align-items: center;
+    display: block;
     margin: auto;
+  }
+  .question-heading,
+  .question-introduction {
+    max-width: 700px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .question-heading {
+    font-size: 2.25rem;
+  }
+  .question-introduction {
+    font-size: 1.25rem;
+  }
+  .page-number {
+    font-size: 1.1rem;
   }
 }

@@ -14,7 +14,6 @@ function App() {
   );
 
   useEffect(() => {
-    console.log(slideNumber);
     if (slideNumber.current > 0 && slideNumber.previous === 0)
       setWelcomeScreenClassName("fade-out-to-left");
     else if (slideNumber.current === 0 && slideNumber.previous > 0) {
@@ -24,27 +23,42 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`absolutely-positioned ${welcomeScreenClassName}`}>
+      <div className={`${welcomeScreenClassName}`}>
         <h1 className="welcome-screen-heading">
-          How much will the facade cleaning cost you?
+          Ermitteln Sie hier Ihren Bedarf für Ihre Fassadenreiningung
         </h1>
-        <p className="initial-text">
-          We are the right partner when it comes to the professional cleaning of
-          plaster, clinker, eternit and metal on building facades. The company
-          SC SystemCare GmbH stands for good advice and clean execution of the
-          work on the object. Your satisfaction is important to us!
+        <div className="welcome-screen-icons">
+          <img
+            src={`${process.env.PUBLIC_URL}/icons/icon1.svg`}
+            alt=""
+            className="welcome-screen-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/icons/icon2.svg`}
+            alt=""
+            className="welcome-screen-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/icons/icon3.svg`}
+            alt=""
+            className="welcome-screen-icon"
+          />
+        </div>
+        <p className="welcome-screen-introduction">
+          Mit dem SC-Tool schnell zur Ihrer sauberen Fassade und Preisfindung.
           <br></br>
           <br></br>
-          💡 Complete the following questionnaire do get an estimate of how
-          serious your situation is.
+          In 5 Schritten zum Ziel.
         </p>
-        <button
-          className="start-button button"
+        <div
+          className="start-button-wrapper"
           onClick={() => setSlideNumber({ previous: 0, current: 1 })}
         >
-          Start assessment
-        </button>
-        <p>🕑 Aproximately 2 minutes.</p>
+          <button className="start-button">
+            LOSLEGEN
+            <div className="next-button-arrow"></div>
+          </button>
+        </div>
       </div>
       {Object.values(data).map((element, i) => (
         <Question
