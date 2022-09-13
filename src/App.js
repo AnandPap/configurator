@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import Question from "./Question";
-import data from "./questionnaireData.json";
+import data from "./data/questionnaireData.json";
 import "./App.css";
+import "./buttons/Buttons.css";
 
 function App() {
-  const [selectedOptions, setSelectedOptions] = useState({
+  const [slideNumber, setSlideNumber] = useState({
     previous: 0,
     current: 0,
   });
@@ -13,17 +14,17 @@ function App() {
   );
 
   useEffect(() => {
-    console.log(selectedOptions);
-    if (selectedOptions.current > 0 && selectedOptions.previous === 0)
+    console.log(slideNumber);
+    if (slideNumber.current > 0 && slideNumber.previous === 0)
       setWelcomeScreenClassName("fade-out-to-left");
-    else if (selectedOptions.current === 0 && selectedOptions.previous > 0) {
+    else if (slideNumber.current === 0 && slideNumber.previous > 0) {
       setWelcomeScreenClassName("fade-in-from-center");
     }
-  }, [selectedOptions]);
+  }, [slideNumber]);
 
   return (
     <div className="App">
-      <div className={`${welcomeScreenClassName} absolutely-positioned`}>
+      <div className={`absolutely-positioned ${welcomeScreenClassName}`}>
         <h1 className="welcome-screen-heading">
           How much will the facade cleaning cost you?
         </h1>
@@ -39,7 +40,7 @@ function App() {
         </p>
         <button
           className="start-button button"
-          onClick={() => setSelectedOptions({ previous: 0, current: 1 })}
+          onClick={() => setSlideNumber({ previous: 0, current: 1 })}
         >
           Start assessment
         </button>
@@ -49,8 +50,8 @@ function App() {
         <Question
           element={element}
           key={i}
-          selectedOptions={selectedOptions}
-          setSelectedOptions={setSelectedOptions}
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
           questionNumber={i + 1}
         />
       ))}

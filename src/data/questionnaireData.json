@@ -1,0 +1,53 @@
+{
+    "question1": {
+        "question": "Art der Immobilie",
+        "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
+        "answers": [
+            {"imageURL": "1st-slide/1.jpg", "imageTitle": "Einfamilienhaus", "imagePrice": "ab 1600 EUR"},
+            {"imageURL": "1st-slide/2.jpg", "imageTitle": "Mehrfamilienhaus", "imagePrice": "ab 2600 EUR"},
+            {"imageURL": "1st-slide/3.jpg", "imageTitle": "Gewerbeobjekt", "imagePrice": "ab 3400 EUR"},
+            {"imageURL": "1st-slide/4.jpg", "imageTitle": "Spezial?"}
+        ]
+    },
+    "question2": {
+        "question": "Wie groß ist das Gewerbeobjekte?",
+        "answers": [
+            {"answerText": "200-500 qm"},
+            {"answerText": "500-1000 qm"},
+            {"answerText": "1000-1500 qm"},
+            {"answerText": "1500-3000 qm"},
+            {"answerText": "über 3000 qm"}
+        ]
+    },
+    "question3": {
+        "question": "Fassadenart",
+        "introduction": "Wahlen Sie ihre Fassadenart aus um die Kalkulation besser einzuschätzen.",
+        "answers": [
+            {"answerText": "Putzfassade"},
+            {"answerText": "Klinker"},
+            {"answerText": "Kalksandsteinfassade"},
+            {"answerText": "Metallfassade"},
+            {"answerText": "Natursteinfassade"},
+            {"answerText": "Andere"}
+        ]
+    },
+    "question4": {
+        "question": "Verschmutzungsart",
+        "introduction": "Auswahl: Wie hoch ist der Verschmutzungsgrad Ihrer Fassade?",
+        "answers": [
+            {"imageURL": "4th-slide/1.png", "imageTitle": "Flecken"},
+            {"imageURL": "4th-slide/2.png", "imageTitle": "Färbungen"},
+            {"imageURL": "4th-slide/3.png", "imageTitle": "Schimmel"},
+            {"imageURL": "4th-slide/4.png", "imageTitle": "Moos"},
+            {"imageURL": "4th-slide/5.png", "imageTitle": "Graffiti"}
+        ]
+    },
+    "form": {
+        "question": "Dein Info",
+        "answers": [
+            {"formFieldTitle": "Dein Adresse: "},
+            {"formFieldTitle":"TelefonnummerDiese: "},
+            {"formFieldTitle":"Email: "}
+        ]
+    }
+}

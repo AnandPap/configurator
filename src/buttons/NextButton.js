@@ -1,10 +1,10 @@
 import React from "react";
 
-const NextButton = ({ onClick }) => {
+const NextButton = ({ text, onClick }) => {
   return (
     <div className="next-button-wrapper" onClick={onClick}>
       <button className="next-button">
-        NÄCHSTE
+        {text}
         <div className="next-button-arrow"></div>
       </button>
     </div>

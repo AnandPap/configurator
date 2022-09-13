@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="94" height="63" viewBox="0 0 94 63">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_46" data-name="Rectangle 46" width="54" height="39" transform="translate(0.034 0.352)" fill="none" stroke="#8fe83d" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_120" data-name="Group 120" transform="translate(-170 -1905)">
+    <text id="Kostenpunkt" transform="translate(170 1956)" fill="#8fe83d" font-size="10" font-family="HelveticaNeueLTPro-Md, Helvetica Neue LT Pro" font-weight="500" letter-spacing="0.1em"><tspan x="-42.135" y="10">KOSTENPUNKT</tspan></text>
+    <g id="Group_22" data-name="Group 22" transform="translate(189.966 1904.648)">
+      <g id="Mask_Group_14" data-name="Mask Group 14" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <rect id="Rectangle_45" data-name="Rectangle 45" width="50" height="35" rx="6" transform="translate(2.034 1.352)" fill="none" stroke="#8fe83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_20" data-name="Path 20" d="M0,0H49.207" transform="translate(2.034 13.581)" fill="none" stroke="#8fe83d" stroke-linecap="round" stroke-width="2"/>
+        <line id="Line_3" data-name="Line 3" transform="translate(39.034 26.352)" fill="none" stroke="#8fe83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+        <line id="Line_4" data-name="Line 4" transform="translate(44.034 26.352)" fill="none" stroke="#8fe83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+      </g>
+    </g>
+  </g>
+</svg>
