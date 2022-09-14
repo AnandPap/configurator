@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="84"
-   height="76"
-   viewBox="0 0 84 76"
+   width="75"
+   height="75"
+   viewBox="0 0 75 75"
    version="1.1"
    id="svg18"
    sodipodi:docname="icon2.svg"
@@ -21,14 +21,16 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="10.631579"
-     inkscape:cx="42.044554"
-     inkscape:cy="38.094059"
+     inkscape:cx="53.613861"
+     inkscape:cy="36.024752"
      inkscape:window-width="1465"
      inkscape:window-height="1030"
-     inkscape:window-x="873"
-     inkscape:window-y="70"
+     inkscape:window-x="565"
+     inkscape:window-y="60"
      inkscape:window-maximized="0"
-     inkscape:current-layer="Group_121" />
+     inkscape:current-layer="Group_121"
+     width="75px"
+     height="80px" />
   <defs
      id="defs4">
     <clipPath
@@ -38,33 +40,38 @@
          data-name="Rectangle 47"
          width="45"
          height="56"
-         transform="translate(-0.374 -0.472)"
+         transform="translate(-0.374,-0.472)"
          fill="none"
          stroke="#8fe83d"
-         stroke-width="1" />
+         stroke-width="1"
+         x="0"
+         y="0" />
     </clipPath>
   </defs>
   <g
      id="Group_121"
      data-name="Group 121"
-     transform="translate(-278 -1892)">
+     transform="translate(-278,-1892)">
     <text
        id="_45_Sekunden"
        data-name="45 Sekunden"
        fill="#8fe83d"
-       font-size="10px"
+       font-size="9.63734px"
        font-family="HelveticaNeueLTPro-Md, 'Helvetica Neue LT Pro'"
        font-weight="500"
        letter-spacing="0.1em"
-       x="322.20795"
-       y="1950.0743"><tspan
-         x="282.85294"
-         y="1960.0743"
-         id="tspan6">45 SEKUNDEN</tspan></text>
+       x="328.65753"
+       y="1875.9916"
+       transform="scale(0.96242387,1.0390432)"
+       style="stroke-width:0.963734"><tspan
+         x="290.72974"
+         y="1885.6289"
+         id="tspan6"
+         style="stroke-width:0.963734">45 SEKUNDEN</tspan></text>
     <g
        id="Group_17"
        data-name="Group 17"
-       transform="translate(298.374,1891.2492)">
+       transform="matrix(1.0000026,0,0,1.0042294,292.374,1892.2743)">
       <g
          id="Group_16"
          data-name="Group 16"

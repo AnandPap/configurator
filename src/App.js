@@ -46,10 +46,8 @@ function App() {
         </div>
         <p className="welcome-screen-introduction">
           Mit dem SC-Tool schnell zur Ihrer sauberen Fassade und Preisfindung.
-          <br></br>
-          <br></br>
-          In 5 Schritten zum Ziel.
         </p>
+        <p className="welcome-screen-introduction">In 5 Schritten zum Ziel.</p>
         <div
           className="start-button-wrapper"
           onClick={() => setSlideNumber({ previous: 0, current: 1 })}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="94"
-   height="63"
-   viewBox="0 0 94 63"
+   width="75"
+   height="75"
+   viewBox="0 0 75 75"
    version="1.1"
    id="svg16"
    sodipodi:docname="icon3.svg"
@@ -22,14 +22,15 @@
      showgrid="false"
      showguides="false"
      inkscape:zoom="12.825397"
-     inkscape:cx="46.938119"
-     inkscape:cy="37.581683"
+     inkscape:cx="45.066831"
+     inkscape:cy="29.00495"
      inkscape:window-width="1465"
      inkscape:window-height="1030"
-     inkscape:window-x="293"
-     inkscape:window-y="26"
+     inkscape:window-x="643"
+     inkscape:window-y="35"
      inkscape:window-maximized="0"
-     inkscape:current-layer="Group_120" />
+     inkscape:current-layer="Group_120"
+     width="75px" />
   <defs
      id="defs4">
     <clipPath
@@ -39,32 +40,37 @@
          data-name="Rectangle 46"
          width="54"
          height="39"
-         transform="translate(0.034 0.352)"
+         transform="translate(0.034,0.352)"
          fill="none"
          stroke="#8fe83d"
-         stroke-width="1" />
+         stroke-width="1"
+         x="0"
+         y="0" />
     </clipPath>
   </defs>
   <g
      id="Group_120"
      data-name="Group 120"
-     transform="translate(-170 -1905)">
+     transform="translate(-170,-1905)">
     <text
        id="Kostenpunkt"
        fill="#8fe83d"
-       font-size="10px"
+       font-size="9.37526px"
        font-family="HelveticaNeueLTPro-Md, 'Helvetica Neue LT Pro'"
        font-weight="500"
        letter-spacing="0.1em"
-       x="218.34158"
-       y="1956.4678"><tspan
-         x="176.20659"
-         y="1966.4678"
-         id="tspan6">KOSTENPUNKT</tspan></text>
+       x="222.05479"
+       y="1839.6606"
+       transform="scale(0.93752613,1.0666369)"
+       style="stroke-width:0.937526"><tspan
+         x="182.55215"
+         y="1849.036"
+         id="tspan6"
+         style="stroke-width:0.937526">KOSTENPUNKT</tspan></text>
     <g
        id="Group_22"
        data-name="Group 22"
-       transform="matrix(1.2211265,0,0,1.1844594,185.56021,1903.786)">
+       transform="matrix(1.1917302,0,0,1.1852565,175.04651,1907.6318)">
       <g
          id="Mask_Group_14"
          data-name="Mask Group 14"

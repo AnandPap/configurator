@@ -89,7 +89,7 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
               <FormField key={i} formFieldTitle={answer.formFieldTitle} />
             ))}
           </form>
-          <NextButton text="SENDEN" />
+          <NextButton text="SENDEN" onClick={() => console.log(5)} />
         </>
       ) : (
         <NextButton
