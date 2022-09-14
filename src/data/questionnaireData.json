@@ -1,5 +1,5 @@
 {
-    "question1": {
+    "slide1": {
         "question": "Art der Immobilie",
         "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
         "answers": [
@@ -9,7 +9,7 @@
             {"imageURL": "slide1-img4", "imageTitle": "Spezial?"}
         ]
     },
-    "question2": {
+    "slide2": {
         "question": "Wie groß ist das Gewerbeobjekte?",
         "answers": [
             {"answerText": "200-500 qm"},
@@ -19,7 +19,7 @@
             {"answerText": "über 3000 qm"}
         ]
     },
-    "question3": {
+    "slid3": {
         "question": "Fassadenart",
         "introduction": "Wahlen Sie ihre Fassadenart aus um die Kalkulation besser einzuschätzen.",
         "answers": [
@@ -31,7 +31,7 @@
             {"answerText": "Andere"}
         ]
     },
-    "question4": {
+    "slide4": {
         "question": "Verschmutzungsart",
         "introduction": "Auswahl: Wie hoch ist der Verschmutzungsgrad Ihrer Fassade?",
         "answers": [
@@ -42,7 +42,7 @@
             {"imageURL": "slide4-img5", "imageTitle": "Graffiti"}
         ]
     },
-    "form": {
+    "slide5": {
         "question": "Dein Info",
         "answers": [
             {"formFieldTitle": "Dein Adresse: "},

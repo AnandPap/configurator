@@ -1,11 +1,11 @@
 import React from "react";
 
-const BackButton = ({ onClick }) => {
+const BackButton = ({ text, onClick }) => {
   return (
     <div className="back-button-wrapper">
       <button className="back-button" onClick={onClick}>
         <div className="back-button-arrow"></div>
-        <p>ZURÜCK</p>
+        <p>{text}</p>
       </button>
     </div>
   );

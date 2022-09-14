@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AnswerButton from "./buttons/AnswerButton";
 import BackButton from "./buttons/BackButton";
-import ImageCard from "./ImageCard";
+import ImageCard from "./reusable/ImageCard";
 import NextButton from "./buttons/NextButton";
-import FormField from "./FormField";
+import FormField from "./reusable/FormField";
 
 const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   useEffect(() => {
@@ -33,8 +33,9 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   const [questionClassName, setQuestionClassName] = useState("hide");
   return (
     <div className={`${questionClassName}`}>
-      <div className="question-header">
+      <div className="slide-header">
         <BackButton
+          text="ZURÜCK"
           onClick={() => {
             setSlideNumber({
               previous: questionNumber,
@@ -44,8 +45,8 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
         />
         <p className="page-number">{questionNumber}/5</p>
       </div>
-      <h1 className="question-heading">{element.question}</h1>
-      <p className="question-introduction">{element.introduction}</p>
+      <h1 className="slide-heading">{element.question}</h1>
+      <p className="slide-introduction">{element.introduction}</p>
       <div className="answer-images">
         {element.answers.map((answer, i) =>
           answer.imageURL ? (
@@ -93,13 +94,13 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
         </>
       ) : (
         <NextButton
+          text="NÄCHSTE"
           onClick={() => {
             setSlideNumber({
               previous: questionNumber,
               current: questionNumber + 1,
             });
           }}
-          text="NÄCHSTE"
         />
       )}
     </div>

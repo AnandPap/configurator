@@ -37,11 +37,11 @@ body {
   margin: var(--main-screen-spacing);
 }
 
-.question-heading {
+.slide-heading {
   font-size: 1.75rem;
 }
 
-.question-introduction,
+.slide-introduction,
 .welcome-screen-introduction {
   color: navy;
   margin: var(--main-screen-spacing);
@@ -49,7 +49,7 @@ body {
   font-size: 1.15rem;
 }
 
-.question-header {
+.slide-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -313,16 +313,16 @@ body {
   .answer-buttons {
     margin: auto;
   }
-  .question-heading,
-  .question-introduction {
+  .slide-heading,
+  .slide-introduction {
     max-width: 700px;
     text-align: center;
     margin: 30px auto;
   }
-  .question-heading {
+  .slide-heading {
     font-size: 2.25rem;
   }
-  .question-introduction {
+  .slide-introduction {
     font-size: 1.25rem;
   }
   .page-number {
