@@ -1,9 +1,9 @@
 import React from "react";
 
-const NextButton = ({ text, onClick }) => {
+const StartButton = ({ text, onClick }) => {
   return (
-    <div className="next-button-wrapper" onClick={onClick}>
-      <button className="next-button">
+    <div className="start-button-wrapper" onClick={onClick}>
+      <button className="start-button">
         <p className="next-button-text">{text}</p>
         <div className="next-button-arrow"></div>
       </button>
@@ -11,4 +11,4 @@ const NextButton = ({ text, onClick }) => {
   );
 };
 
-export default NextButton;
+export default StartButton;

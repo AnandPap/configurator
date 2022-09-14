@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import Question from "./Question";
+import Slide from "./Slide";
 import data from "./data/questionnaireData.json";
 import "./App.css";
 import "./buttons/Buttons.css";
+import StartButton from "./buttons/StartButton";
+import Icon from "./reusable/Icon";
 
 function App() {
   const [slideNumber, setSlideNumber] = useState({
@@ -28,19 +30,16 @@ function App() {
           Ermitteln Sie hier Ihren Bedarf für Ihre Fassadenreiningung
         </h1>
         <div className="welcome-screen-icons">
-          <img
-            src={`${process.env.PUBLIC_URL}/icons/icon1.svg`}
-            alt=""
+          <Icon
+            iconURL={`${process.env.PUBLIC_URL}/icons/icon1.svg`}
             className="welcome-screen-icon"
           />
-          <img
-            src={`${process.env.PUBLIC_URL}/icons/icon2.svg`}
-            alt=""
+          <Icon
+            iconURL={`${process.env.PUBLIC_URL}/icons/icon2.svg`}
             className="welcome-screen-icon"
           />
-          <img
-            src={`${process.env.PUBLIC_URL}/icons/icon3.svg`}
-            alt=""
+          <Icon
+            iconURL={`${process.env.PUBLIC_URL}/icons/icon3.svg`}
             className="welcome-screen-icon"
           />
         </div>
@@ -48,18 +47,13 @@ function App() {
           Mit dem SC-Tool schnell zur Ihrer sauberen Fassade und Preisfindung.
         </p>
         <p className="welcome-screen-introduction">In 5 Schritten zum Ziel.</p>
-        <div
-          className="start-button-wrapper"
+        <StartButton
+          text="LOSLEGEN"
           onClick={() => setSlideNumber({ previous: 0, current: 1 })}
-        >
-          <button className="start-button">
-            LOSLEGEN
-            <div className="next-button-arrow"></div>
-          </button>
-        </div>
+        />
       </div>
       {Object.values(data).map((element, i) => (
-        <Question
+        <Slide
           element={element}
           key={i}
           slideNumber={slideNumber}

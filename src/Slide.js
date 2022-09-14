@@ -5,7 +5,7 @@ import ImageCard from "./ImageCard";
 import NextButton from "./buttons/NextButton";
 import FormField from "./FormField";
 
-const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
+const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   useEffect(() => {
     if (
       slideNumber.current === questionNumber &&
@@ -52,7 +52,7 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
             <ImageCard
               key={i}
               i={i + 1}
-              imageURL={answer.imageURL}
+              imageClass={answer.imageURL}
               imageTitle={answer.imageTitle}
               imagePrice={answer.imagePrice}
               onClick={() => {
@@ -106,4 +106,4 @@ const Question = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   );
 };
 
-export default Question;
+export default Slide;

@@ -22,6 +22,7 @@ body {
 .App {
   margin: auto;
   width: 80%;
+  overflow-wrap: break-word;
 }
 
 .welcome-screen-heading {
@@ -36,15 +37,16 @@ body {
   margin: var(--main-screen-spacing);
 }
 
+.question-heading {
+  font-size: 1.75rem;
+}
+
 .question-introduction,
 .welcome-screen-introduction {
   color: navy;
   margin: var(--main-screen-spacing);
-}
-
-.answers {
-  display: flex;
-  flex-direction: column;
+  margin-top: 20px;
+  font-size: 1.15rem;
 }
 
 .question-header {
@@ -58,30 +60,6 @@ body {
   color: white;
 }
 
-.property-image-wrapper {
-  border-radius: 10%;
-  margin-bottom: -25px;
-}
-
-.property-image-wrapper:hover {
-  cursor: pointer;
-}
-
-.property-image {
-  border-radius: 10%;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-
-.answer-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  max-width: 300px;
-  bottom: 45px;
-}
-
 .answer-images {
   display: flex;
   flex-direction: column;
@@ -89,39 +67,119 @@ body {
   align-items: center;
 }
 
-.answer {
+.slider-img {
+  border-radius: 10%;
+  width: 100%;
+  max-width: 300px;
+  height: 220px;
+  background-size: cover;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.slider-img:hover {
+  cursor: pointer;
+}
+
+.answer-img {
   position: relative;
   display: flex;
   align-items: center;
-  bottom: 45px;
-  left: 10px;
+  left: 5px;
+  top: 170px;
 }
 
 .answer-circle {
   border: 2px solid white;
   border-radius: 50%;
   color: white;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 5px 0 0;
+  margin: 0 10px;
+  font-size: 1.1rem;
 }
 
-.answer-circle > p {
-  /* position: relative; */
-}
-
-.image-title-and-price-container {
-  margin-left: 5px;
-  font-size: 0.9rem;
-}
-
-.image-title,
-.image-price {
+.img-title,
+.img-price {
   margin: 0;
-  text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
+  text-shadow: 0px 0px 2px black;
+}
+
+.slide1-img1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/1st-slide/1.jpg");
+}
+.slide1-img2 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/1st-slide/2.jpg");
+}
+.slide1-img3 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/1st-slide/3.jpg");
+}
+.slide1-img4 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/1st-slide/4.jpg");
+}
+.slide4-img1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/4th-slide/1.png");
+}
+.slide4-img2 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/4th-slide/2.png");
+}
+.slide4-img3 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/4th-slide/3.png");
+}
+.slide4-img4 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/4th-slide/4.png");
+}
+.slide4-img5 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/public/images/4th-slide/5.png");
 }
 
 .ending-form {
@@ -233,8 +291,11 @@ body {
 }
 
 @media only screen and (min-width: 425px) {
-  .property-image-wrapper {
-    margin-bottom: 35px;
+  .slider-img {
+    height: 250px;
+  }
+  .answer-img {
+    top: 205px;
   }
   .welcome-screen-heading {
     font-size: 2rem;
@@ -250,15 +311,13 @@ body {
     width: 100px;
   }
   .answer-buttons {
-    align-items: center;
-    display: block;
     margin: auto;
   }
   .question-heading,
   .question-introduction {
     max-width: 700px;
     text-align: center;
-    margin: 20px auto;
+    margin: 30px auto;
   }
   .question-heading {
     font-size: 2.25rem;
