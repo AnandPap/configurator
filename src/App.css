@@ -89,6 +89,7 @@ body {
 
 .slider-img:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px 0 black;
 }
 
 .answer-img {

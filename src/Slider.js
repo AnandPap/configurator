@@ -12,15 +12,13 @@ const Slider = () => {
   });
   return (
     <div className="App">
-      {slideNumber.current === 0 ? (
-        <WelcomeScreen
-          slideNumber={slideNumber}
-          setSlideNumber={setSlideNumber}
-        />
-      ) : slideNumber.current === 6 ? (
-        <ThankYouSlide />
-      ) : (
-        <div className="slider-wrapper">
+      <WelcomeScreen
+        slideNumber={slideNumber}
+        setSlideNumber={setSlideNumber}
+      />
+      {/* <ThankYouSlide /> */}
+      <div className="slider-wrapper">
+        {slideNumber.current > 0 && slideNumber.current < 6 ? (
           <div className="slide-header fade-in-from-right">
             <BackButton
               text="ZURÜCK"
@@ -33,17 +31,17 @@ const Slider = () => {
             />
             <p className="page-number">{slideNumber.current}/5</p>
           </div>
-          {Object.values(data).map((element, i) => (
-            <Slide
-              element={element}
-              key={i}
-              slideNumber={slideNumber}
-              setSlideNumber={setSlideNumber}
-              questionNumber={i + 1}
-            />
-          ))}
-        </div>
-      )}
+        ) : null}
+        {Object.values(data).map((element, i) => (
+          <Slide
+            element={element}
+            key={i}
+            slideNumber={slideNumber}
+            setSlideNumber={setSlideNumber}
+            questionNumber={i + 1}
+          />
+        ))}
+      </div>
     </div>
   );
 };
