@@ -20,9 +20,14 @@ body {
 }
 
 .App {
+  overflow-wrap: break-word;
+}
+
+.welcome-screen,
+.slide {
   margin: auto;
   width: 80%;
-  overflow-wrap: break-word;
+  max-width: 80%;
 }
 
 .welcome-screen-heading {
@@ -183,7 +188,7 @@ body {
 }
 
 .ending-form {
-  width: fit-content;
+  max-width: 300px;
   margin: 25px auto;
 }
 
@@ -203,6 +208,8 @@ body {
   border: none;
   border-bottom: 1px solid white;
   padding: 10px 0;
+  width: 100%;
+  max-width: 300px;
 }
 
 .form-input::placeholder {

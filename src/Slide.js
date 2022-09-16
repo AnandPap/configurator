@@ -30,9 +30,15 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
     }
     // eslint-disable-next-line
   }, [slideNumber]);
+
   const [questionClassName, setQuestionClassName] = useState("hide");
+  const [formData, setFormData] = useState({
+    address: "",
+    telefonNumber: "",
+    email: "",
+  });
   return (
-    <div className={`${questionClassName}`}>
+    <div className={`slide ${questionClassName}`}>
       <div className="slide-header">
         <BackButton
           text="ZURÜCK"
@@ -85,12 +91,26 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
       </div>
       {element.question === "Dein Info" ? (
         <>
-          <form className="ending-form" onSubmit={() => console.log(5)}>
+          <form
+            className="ending-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(formData);
+            }}
+          >
             {element.answers.map((answer, i) => (
-              <FormField key={i} formFieldTitle={answer.formFieldTitle} />
+              <FormField
+                key={i}
+                formFieldTitle={answer.formFieldTitle}
+                type={answer.type}
+              />
             ))}
+            <NextButton
+              text="SENDEN"
+              onClick={() => console.log(5)}
+              className="send-btn"
+            />
           </form>
-          <NextButton text="SENDEN" onClick={() => console.log(5)} />
         </>
       ) : (
         <NextButton

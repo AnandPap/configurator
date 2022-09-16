@@ -1,8 +1,8 @@
 import React from "react";
 
-const NextButton = ({ text, onClick }) => {
+const NextButton = ({ text, onClick, className }) => {
   return (
-    <div className="next-button-wrapper" onClick={onClick}>
+    <div className={`next-button-wrapper ${className}`} onClick={onClick}>
       <button className="next-button">
         <p className="next-button-text">{text}</p>
         <div className="next-button-arrow"></div>
