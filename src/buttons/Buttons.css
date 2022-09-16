@@ -37,8 +37,7 @@
 .start-button-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
-  margin: auto;
+  margin: 50px auto;
   max-width: 300px;
   cursor: pointer;
 }

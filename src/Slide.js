@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import AnswerButton from "./buttons/AnswerButton";
-import BackButton from "./buttons/BackButton";
 import ImageCard from "./reusable/ImageCard";
 import NextButton from "./buttons/NextButton";
 import FormField from "./reusable/FormField";
@@ -39,18 +38,6 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   });
   return (
     <div className={`slide ${questionClassName}`}>
-      <div className="slide-header">
-        <BackButton
-          text="ZURÜCK"
-          onClick={() => {
-            setSlideNumber({
-              previous: questionNumber,
-              current: questionNumber - 1,
-            });
-          }}
-        />
-        <p className="page-number">{questionNumber}/5</p>
-      </div>
       <h1 className="slide-heading">{element.question}</h1>
       <p className="slide-introduction">{element.introduction}</p>
       <div className="answer-images">
@@ -107,7 +94,13 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
             ))}
             <NextButton
               text="SENDEN"
-              onClick={() => console.log(5)}
+              onClick={() => {
+                setSlideNumber({
+                  previous: questionNumber,
+                  current: questionNumber + 1,
+                });
+                console.log(5);
+              }}
               className="send-btn"
             />
           </form>
