@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AnswerButton from "./buttons/AnswerButton";
 import ImageCard from "./reusable/ImageCard";
 import NextButton from "./buttons/NextButton";
-import FormField from "./reusable/FormField";
+import FormSlide from "./FormSlide";
 
 const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   useEffect(() => {
@@ -31,18 +31,14 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
   }, [slideNumber]);
 
   const [questionClassName, setQuestionClassName] = useState("hide");
-  const [formData, setFormData] = useState({
-    address: "",
-    telefonNumber: "",
-    email: "",
-  });
+
   return (
     <div className={`slide ${questionClassName}`}>
       <h1 className="slide-heading">{element.question}</h1>
       <p className="slide-introduction">{element.introduction}</p>
-      <div className="answer-images">
-        {element.answers.map((answer, i) =>
-          answer.imageURL ? (
+      {element.type === "images" && (
+        <div className="answer-images">
+          {element.answers.map((answer, i) => (
             <ImageCard
               key={i}
               i={i + 1}
@@ -56,12 +52,12 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
                 });
               }}
             />
-          ) : null
-        )}
-      </div>
-      <div className="answer-buttons">
-        {element.answers.map((answer, i) =>
-          answer.answerText ? (
+          ))}
+        </div>
+      )}
+      {element.type === "buttons" && (
+        <div className="answer-buttons">
+          {element.answers.map((answer, i) => (
             <AnswerButton
               key={i}
               i={i + 1}
@@ -73,38 +69,15 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
                 });
               }}
             />
-          ) : null
-        )}
-      </div>
-      {element.question === "Dein Info" ? (
-        <>
-          <form
-            className="ending-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log(formData);
-            }}
-          >
-            {element.answers.map((answer, i) => (
-              <FormField
-                key={i}
-                formFieldTitle={answer.formFieldTitle}
-                type={answer.type}
-              />
-            ))}
-            <NextButton
-              text="SENDEN"
-              onClick={() => {
-                setSlideNumber({
-                  previous: questionNumber,
-                  current: questionNumber + 1,
-                });
-                console.log(5);
-              }}
-              className="send-btn"
-            />
-          </form>
-        </>
+          ))}
+        </div>
+      )}
+      {element.type === "form" ? (
+        <FormSlide
+          element={element}
+          questionNumber={questionNumber}
+          setSlideNumber={setSlideNumber}
+        />
       ) : (
         <NextButton
           text="NÄCHSTE"

@@ -24,10 +24,6 @@ body {
 }
 
 .welcome-screen,
-.slide {
-}
-
-.welcome-screen,
 .slider-wrapper {
   margin: auto;
   width: 80%;
@@ -228,6 +224,8 @@ body {
 
 .hide {
   display: none;
+  height: 0;
+  width: 0;
 }
 .fade-out-to-left {
   animation: fadeOutToLeft var(--fade-time) linear forwards;

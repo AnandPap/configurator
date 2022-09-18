@@ -10,15 +10,16 @@ const Slider = () => {
     previous: 0,
     current: 0,
   });
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(6));
+  console.log(selectedAnswers);
   return (
     <div className="App">
       <WelcomeScreen
         slideNumber={slideNumber}
         setSlideNumber={setSlideNumber}
       />
-      {/* <ThankYouSlide /> */}
       <div className="slider-wrapper">
-        {slideNumber.current > 0 && slideNumber.current < 6 ? (
+        {slideNumber.current > 0 && slideNumber.current < 5 && (
           <div className="slide-header fade-in-from-right">
             <BackButton
               text="ZURÜCK"
@@ -31,7 +32,7 @@ const Slider = () => {
             />
             <p className="page-number">{slideNumber.current}/5</p>
           </div>
-        ) : null}
+        )}
         {Object.values(data).map((element, i) => (
           <Slide
             element={element}
@@ -41,6 +42,7 @@ const Slider = () => {
             questionNumber={i + 1}
           />
         ))}
+        <ThankYouSlide slideNumber={slideNumber} />
       </div>
     </div>
   );
