@@ -4,7 +4,14 @@ import ImageCard from "./reusable/ImageCard";
 import NextButton from "./buttons/NextButton";
 import FormSlide from "./FormSlide";
 
-const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
+const Slide = ({
+  element,
+  questionNumber,
+  slideNumber,
+  setSlideNumber,
+  selectedAnswers,
+  setSelectedAnswers,
+}) => {
   useEffect(() => {
     if (
       slideNumber.current === questionNumber &&
@@ -32,6 +39,18 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
 
   const [questionClassName, setQuestionClassName] = useState("hide");
 
+  const answerOnClickHandler = (answer) => {
+    setSlideNumber({
+      previous: questionNumber,
+      current: questionNumber + 1,
+    });
+    setSelectedAnswers((s) => [
+      ...s.slice(0, questionNumber),
+      { QuestionTitle: `${element.question}`, ...answer },
+      ...s.slice(questionNumber + 1),
+    ]);
+  };
+
   return (
     <div className={`slide ${questionClassName}`}>
       <h1 className="slide-heading">{element.question}</h1>
@@ -45,12 +64,8 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
               imageClass={answer.imageURL}
               imageTitle={answer.imageTitle}
               imagePrice={answer.imagePrice}
-              onClick={() => {
-                setSlideNumber({
-                  previous: questionNumber,
-                  current: questionNumber + 1,
-                });
-              }}
+              selectedAnswer={selectedAnswers[questionNumber]}
+              onClick={() => answerOnClickHandler(answer)}
             />
           ))}
         </div>
@@ -62,12 +77,8 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
               key={i}
               i={i + 1}
               answerText={answer.answerText}
-              onClick={() => {
-                setSlideNumber({
-                  previous: questionNumber,
-                  current: questionNumber + 1,
-                });
-              }}
+              selectedAnswer={selectedAnswers[questionNumber]}
+              onClick={() => answerOnClickHandler(answer)}
             />
           ))}
         </div>
@@ -75,8 +86,8 @@ const Slide = ({ element, questionNumber, slideNumber, setSlideNumber }) => {
       {element.type === "form" ? (
         <FormSlide
           element={element}
-          questionNumber={questionNumber}
-          setSlideNumber={setSlideNumber}
+          selectedAnswers={selectedAnswers}
+          answerOnClickHandler={answerOnClickHandler}
         />
       ) : (
         <NextButton
