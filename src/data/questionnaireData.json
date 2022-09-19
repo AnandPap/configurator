@@ -48,7 +48,7 @@
     },
     "slide5": {
         "type": "form",
-        "title": "Dein Info",
+        "question": "Dein Info",
         "fields": [
             {"formFieldTitle": "Dein Adresse: ", "type": "text"},
             {"formFieldTitle": "TelefonnummerDiese: ", "type": "tel"},
