@@ -106,7 +106,7 @@
 }
 
 .answer-button-text {
-  margin-left: 15px;
+  font-size: var(--paragraph-font);
 }
 
 .start-button:hover,

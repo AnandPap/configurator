@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 :root {
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -21,13 +26,8 @@ body {
 
 .App {
   overflow-wrap: break-word;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
   width: 80%;
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
+  margin: auto;
 }
 
 .welcome-screen-heading,
@@ -105,7 +105,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
+  margin-right: 10px;
+  margin-left: 5px;
   font-size: var(--paragraph-font);
 }
 
@@ -199,13 +200,13 @@ body {
 
 .form-field-title {
   color: navy;
-  font-size: var(--paragraph-font);
+  font-size: calc(var(--paragraph-font) * 1.1);
 }
 
 .form-input {
   background: none;
   margin-top: 10px;
-  font-size: var(--paragraph-font);
+  font-size: calc(var(--paragraph-font) * 1.1);
   border: none;
   border-bottom: 1px solid white;
   padding: 10px 0;
@@ -224,8 +225,6 @@ body {
 
 .hide {
   display: none;
-  height: 0;
-  width: 0;
 }
 
 .border {
@@ -254,13 +253,10 @@ input[type="number"] {
   font-size: calc(var(--heading-font) * 1.5);
 }
 
-.fade-out-to-left {
-  position: absolute;
-  top: 50px;
-  animation: fadeOutToLeft var(--fade-time) linear forwards;
-}
+.fade-out-to-left,
 .fade-out-to-right {
-  animation: fadeOutToRight var(--fade-time) linear forwards;
+  display: none;
+  opacity: 0;
 }
 .fade-in-from-left {
   animation: fadeInFromLeft var(--fade-time) linear forwards;
@@ -272,32 +268,6 @@ input[type="number"] {
   animation: fadeInCenter var(--fade-time) forwards;
 }
 
-@keyframes fadeOutToLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(-500px);
-    opacity: 0;
-    display: none;
-  }
-}
-@keyframes fadeOutToRight {
-  0% {
-    transform: translateX(0px);
-    opacity: 0;
-    display: none;
-    position: absolute;
-  }
-  100% {
-    transform: translateX(500px);
-    opacity: 0;
-    display: none;
-    height: 0;
-    width: 0;
-  }
-}
 @keyframes fadeInFromLeft {
   0% {
     transform: translateX(-500px);
@@ -322,7 +292,6 @@ input[type="number"] {
   0% {
     transform: translateY(100px);
     opacity: 0;
-    display: none;
   }
   100% {
     transform: translateY(0px);

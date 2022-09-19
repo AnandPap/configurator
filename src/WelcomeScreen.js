@@ -6,13 +6,14 @@ const WelcomeScreen = ({ slideNumber, setSlideNumber }) => {
   const [welcomeScreenClassName, setWelcomeScreenClassName] = useState(
     "fade-in-from-center"
   );
+
   useEffect(() => {
     if (slideNumber.current > 0 && slideNumber.previous === 0)
       setWelcomeScreenClassName("fade-out-to-left");
-    else if (slideNumber.current === 0 && slideNumber.previous > 0) {
+    else if (slideNumber.current === 0 && slideNumber.previous > 0)
       setWelcomeScreenClassName("fade-in-from-center");
-    }
   }, [slideNumber]);
+
   return (
     <div className={`welcome-screen ${welcomeScreenClassName}`}>
       <h1 className="welcome-screen-heading">

@@ -11,7 +11,7 @@ const Slider = () => {
     current: 0,
   });
   const [selectedAnswers, setSelectedAnswers] = useState(Array(4).fill({}));
-  console.log(selectedAnswers);
+
   return (
     <div className="App">
       <WelcomeScreen
@@ -43,7 +43,7 @@ const Slider = () => {
           setSelectedAnswers={setSelectedAnswers}
         />
       ))}
-      <ThankYouSlide slideNumber={slideNumber} />
+      {slideNumber.current === 6 && <ThankYouSlide slideNumber={slideNumber} />}
     </div>
   );
 };
