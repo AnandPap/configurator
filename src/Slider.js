@@ -10,7 +10,7 @@ const Slider = () => {
     previous: 0,
     current: 0,
   });
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(6).fill({}));
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(4).fill({}));
   console.log(selectedAnswers);
   return (
     <div className="App">

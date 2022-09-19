@@ -22,6 +22,7 @@ body {
 .App {
   overflow-wrap: break-word;
   overflow: hidden;
+  position: relative;
   margin: auto;
   width: 80%;
   max-width: 80%;
@@ -232,6 +233,20 @@ body {
 }
 
 .warning-message {
+  text-align: center;
+  color: red;
+  margin: 0;
+  font-size: var(--paragraph-font);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .thank-you-screen {
@@ -240,6 +255,8 @@ body {
 }
 
 .fade-out-to-left {
+  position: absolute;
+  top: 50px;
   animation: fadeOutToLeft var(--fade-time) linear forwards;
 }
 .fade-out-to-right {
@@ -257,17 +274,13 @@ body {
 
 @keyframes fadeOutToLeft {
   0% {
-    transform: translateX(0px);
     opacity: 1;
-    position: relative;
+    transform: translateX(0px);
   }
   100% {
     transform: translateX(-500px);
     opacity: 0;
     display: none;
-    position: relative;
-    width: 0px;
-    height: 0px;
   }
 }
 @keyframes fadeOutToRight {
@@ -275,6 +288,7 @@ body {
     transform: translateX(0px);
     opacity: 0;
     display: none;
+    position: absolute;
   }
   100% {
     transform: translateX(500px);
@@ -319,7 +333,7 @@ body {
 @media only screen and (min-width: 425px) {
   :root {
     --heading-font: 2.25rem;
-    --paragraph-font: 1.25rem;
+    --paragraph-font: 1.15rem;
   }
   .slider-img {
     height: 250px;
@@ -354,5 +368,8 @@ body {
   }
   .page-number {
     font-size: var(--paragraph-font);
+  }
+  .fade-out-to-left {
+    top: 60px;
   }
 }

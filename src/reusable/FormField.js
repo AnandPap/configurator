@@ -14,7 +14,7 @@ const FormField = ({
     setInputText(e.target.value);
     if (type === "text")
       setFormData((s) => ({ ...s, address: e.target.value }));
-    else if (type === "tel")
+    else if (type === "number")
       setFormData((s) => ({ ...s, telefon: e.target.value }));
     else setFormData((s) => ({ ...s, [type]: e.target.value }));
   };
@@ -28,7 +28,6 @@ const FormField = ({
         placeholder="Antwort hier"
         value={inputText}
         onChange={inputHandler}
-        required
       />
     </div>
   );

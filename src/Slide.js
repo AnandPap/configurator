@@ -45,9 +45,9 @@ const Slide = ({
       current: questionNumber + 1,
     });
     setSelectedAnswers((s) => [
-      ...s.slice(0, questionNumber),
+      ...s.slice(0, questionNumber - 1),
       { QuestionTitle: `${element.question}`, ...answer },
-      ...s.slice(questionNumber + 1),
+      ...s.slice(questionNumber),
     ]);
   };
 
@@ -64,7 +64,7 @@ const Slide = ({
               imageClass={answer.imageURL}
               imageTitle={answer.imageTitle}
               imagePrice={answer.imagePrice}
-              selectedAnswer={selectedAnswers[questionNumber]}
+              selectedAnswer={selectedAnswers[questionNumber - 1]}
               onClick={() => answerOnClickHandler(answer)}
             />
           ))}
@@ -77,7 +77,7 @@ const Slide = ({
               key={i}
               i={i + 1}
               answerText={answer.answerText}
-              selectedAnswer={selectedAnswers[questionNumber]}
+              selectedAnswer={selectedAnswers[questionNumber - 1]}
               onClick={() => answerOnClickHandler(answer)}
             />
           ))}

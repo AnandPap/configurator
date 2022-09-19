@@ -37,7 +37,7 @@
 .start-button-wrapper {
   display: flex;
   align-items: center;
-  margin: 50px auto;
+  margin: 50px auto 15px;
   max-width: 300px;
   cursor: pointer;
 }
@@ -132,6 +132,10 @@
 .answer-button:hover {
   cursor: pointer;
   transform: scale(1.01);
+}
+
+.border {
+  border: 2px solid white;
 }
 
 @media only screen and (min-width: 425px) {

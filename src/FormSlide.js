@@ -9,17 +9,19 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
     telefon: "",
     email: "",
   });
-  console.log(formData);
   const submitHandler = (e) => {
+    e.preventDefault();
     let answerMissing = false;
-    for (let i = 0; i < selectedAnswers.length - 1; i++) {
-      if (selectedAnswers[i] === "") {
+    for (const property in selectedAnswers) {
+      if (Object.values(selectedAnswers[property])[0] === undefined) {
         answerMissing = true;
         break;
       }
     }
     if (answerMissing)
-      setWarningMessage("Please provide answer to all questions.");
+      setWarningMessage(
+        "Bitte, gehen Sie zurück und beantworten Sie alle Fragen."
+      );
     else {
       for (const property in formData) {
         if (formData[property === ""]) {
@@ -27,17 +29,17 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
           break;
         }
       }
-      if (answerMissing) setWarningMessage("Please fill out all form fields.");
+      if (answerMissing)
+        setWarningMessage("Bitte, füllen Sie alle Formularfelder aus.");
       else {
         if (
           /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(
             Object.values(formData)[2]
           )
         ) {
-          e.preventDefault();
           answerOnClickHandler();
         } else {
-          setWarningMessage("Error filling out form.");
+          setWarningMessage("E-Mail-Fehler beim Ausfüllen des Formulars!");
         }
       }
     }
@@ -61,8 +63,8 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
           onClick={submitHandler}
           className="send-btn"
         />
+        <p className="warning-message">{warningMessage}</p>
       </form>
-      <div className="warning-message">{warningMessage}</div>
     </>
   );
 };
