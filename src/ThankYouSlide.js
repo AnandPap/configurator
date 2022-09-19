@@ -9,9 +9,7 @@ const ThankYouSlide = ({ slideNumber }) => {
   }, [slideNumber]);
 
   return (
-    <div className={`thank-you-screen ${thankYouSlideClassName}`}>
-      Vielen Dank!
-    </div>
+    <p className={`thank-you-screen ${thankYouSlideClassName}`}>Vielen Dank!</p>
   );
 };
 

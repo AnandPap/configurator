@@ -251,7 +251,7 @@ input[type="number"] {
 
 .thank-you-screen {
   text-align: center;
-  background-color: red;
+  font-size: calc(var(--heading-font) * 1.5);
 }
 
 .fade-out-to-left {
