@@ -9,8 +9,8 @@
   --green-background: rgb(125, 225, 55);
   --blue-background: rgb(65, 165, 225);
   --yellow-background: rgb(255, 255, 0);
-  --medium-font: 1.5rem;
-  --title-font: 3rem;
+  --heading-font: 1.5rem;
+  --paragraph-font: 1rem;
   --fade-time: 0.5s;
   --main-screen-spacing: 40px 0;
 }
@@ -29,8 +29,12 @@ body {
   flex-direction: column;
 }
 
+.welcome-screen-heading,
+.slide-heading {
+  font-size: var(--heading-font);
+}
+
 .welcome-screen-heading {
-  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -41,16 +45,12 @@ body {
   margin: var(--main-screen-spacing);
 }
 
-.slide-heading {
-  font-size: 1.75rem;
-}
-
 .slide-introduction,
 .welcome-screen-introduction {
   color: navy;
   margin: var(--main-screen-spacing);
   margin-top: 20px;
-  font-size: 1.15rem;
+  font-size: calc(var(--paragraph-font) * 1.1);
 }
 
 .slide-header {
@@ -78,7 +78,7 @@ body {
   height: 220px;
   background-size: cover;
   color: white;
-  font-size: 0.9rem;
+  font-size: var(--paragraph-font);
   margin-bottom: 20px;
 }
 
@@ -105,7 +105,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 10px;
-  font-size: 1.1rem;
+  font-size: var(--paragraph-font);
 }
 
 .img-title,
@@ -198,13 +198,13 @@ body {
 
 .form-field-title {
   color: navy;
-  font-size: 1.2rem;
+  font-size: var(--paragraph-font);
 }
 
 .form-input {
   background: none;
   margin-top: 10px;
-  font-size: 1.1rem;
+  font-size: var(--paragraph-font);
   border: none;
   border-bottom: 1px solid white;
   padding: 10px 0;
@@ -228,7 +228,7 @@ body {
 }
 
 .border {
-  outline: 2px solid white;
+  border: 2px solid white;
 }
 
 .warning-message {
@@ -280,6 +280,8 @@ body {
     transform: translateX(500px);
     opacity: 0;
     display: none;
+    height: 0;
+    width: 0;
   }
 }
 @keyframes fadeInFromLeft {
@@ -315,6 +317,10 @@ body {
 }
 
 @media only screen and (min-width: 425px) {
+  :root {
+    --heading-font: 2.25rem;
+    --paragraph-font: 1.25rem;
+  }
   .slider-img {
     height: 250px;
   }
@@ -343,13 +349,10 @@ body {
     text-align: center;
     margin: 30px auto;
   }
-  .slide-heading {
-    font-size: 2.25rem;
-  }
   .slide-introduction {
     font-size: 1.25rem;
   }
   .page-number {
-    font-size: 1.25rem;
+    font-size: var(--paragraph-font);
   }
 }

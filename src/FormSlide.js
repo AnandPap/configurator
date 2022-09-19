@@ -21,18 +21,16 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
     if (answerMissing)
       setWarningMessage("Please provide answer to all questions.");
     else {
-      // for (const property in formData) {
-      //   if(form)
-      // }
-      Object.values(formData).map((element, i) => {
-        if (element === "") {
+      for (const property in formData) {
+        if (formData[property === ""]) {
           answerMissing = true;
+          break;
         }
-      });
+      }
       if (answerMissing) setWarningMessage("Please fill out all form fields.");
       else {
         if (
-          /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(
             Object.values(formData)[2]
           )
         ) {
