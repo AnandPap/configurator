@@ -16,7 +16,7 @@ html {
   --yellow-background: rgb(255, 255, 0);
   --heading-font: 1.5rem;
   --paragraph-font: 1rem;
-  --fade-time: 0.5s;
+  --fade-time: 0.4s;
   --main-screen-spacing: 40px 0;
 }
 
@@ -270,7 +270,7 @@ input[type="number"] {
 
 @keyframes fadeInFromLeft {
   0% {
-    transform: translateX(-500px);
+    transform: translateX(-300px);
     opacity: 0;
   }
   100% {
@@ -280,7 +280,7 @@ input[type="number"] {
 }
 @keyframes fadeInFromRight {
   0% {
-    transform: translateX(500px);
+    transform: translateX(300px);
     opacity: 0;
   }
   100% {
