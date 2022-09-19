@@ -10,7 +10,7 @@ const Slider = () => {
     previous: 0,
     current: 0,
   });
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(6));
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(6).fill({}));
   console.log(selectedAnswers);
   return (
     <div className="App">
@@ -18,32 +18,32 @@ const Slider = () => {
         slideNumber={slideNumber}
         setSlideNumber={setSlideNumber}
       />
-      <div className="slider-wrapper">
-        {slideNumber.current > 0 && slideNumber.current < 5 && (
-          <div className="slide-header fade-in-from-right">
-            <BackButton
-              text="ZURÜCK"
-              onClick={() => {
-                setSlideNumber((s) => ({
-                  previous: s.current,
-                  current: s.current - 1,
-                }));
-              }}
-            />
-            <p className="page-number">{slideNumber.current}/5</p>
-          </div>
-        )}
-        {Object.values(data).map((element, i) => (
-          <Slide
-            element={element}
-            key={i}
-            slideNumber={slideNumber}
-            setSlideNumber={setSlideNumber}
-            questionNumber={i + 1}
+      {slideNumber.current > 0 && slideNumber.current < 6 && (
+        <div className="slide-header fade-in-from-right">
+          <BackButton
+            text="ZURÜCK"
+            onClick={() => {
+              setSlideNumber((s) => ({
+                previous: s.current,
+                current: s.current - 1,
+              }));
+            }}
           />
-        ))}
-        <ThankYouSlide slideNumber={slideNumber} />
-      </div>
+          <p className="page-number">{slideNumber.current}/5</p>
+        </div>
+      )}
+      {Object.values(data).map((element, i) => (
+        <Slide
+          element={element}
+          key={i}
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
+          questionNumber={i + 1}
+          selectedAnswers={selectedAnswers}
+          setSelectedAnswers={setSelectedAnswers}
+        />
+      ))}
+      <ThankYouSlide slideNumber={slideNumber} />
     </div>
   );
 };
