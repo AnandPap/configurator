@@ -21,13 +21,12 @@ body {
 
 .App {
   overflow-wrap: break-word;
-}
-
-.welcome-screen,
-.slider-wrapper {
+  overflow: hidden;
   margin: auto;
   width: 80%;
   max-width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-screen-heading {
@@ -227,6 +226,19 @@ body {
   height: 0;
   width: 0;
 }
+
+.border {
+  outline: 2px solid white;
+}
+
+.warning-message {
+}
+
+.thank-you-screen {
+  text-align: center;
+  background-color: red;
+}
+
 .fade-out-to-left {
   animation: fadeOutToLeft var(--fade-time) linear forwards;
 }
@@ -247,13 +259,14 @@ body {
   0% {
     transform: translateX(0px);
     opacity: 1;
-    position: absolute;
+    position: relative;
   }
   100% {
     transform: translateX(-500px);
     opacity: 0;
     display: none;
-    position: absolute;
+    position: relative;
+    width: 0px;
     height: 0px;
   }
 }
@@ -309,7 +322,7 @@ body {
     top: 205px;
   }
   .welcome-screen-heading {
-    font-size: 2rem;
+    font-size: 2.25rem;
     text-align: center;
   }
   .welcome-screen-introduction {
@@ -337,6 +350,6 @@ body {
     font-size: 1.25rem;
   }
   .page-number {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 }
