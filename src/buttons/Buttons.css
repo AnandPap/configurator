@@ -72,6 +72,16 @@
   font-size: 1.2rem;
 }
 
+.restart-button {
+  background-color: rgb(0, 0, 0, 0);
+  font-size: 1.2rem;
+  border-radius: 1.5rem;
+  padding: 0 0.6em;
+  color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 0 black;
+}
+
 .next-button-text {
   flex-grow: 1;
   margin: 0;
@@ -105,18 +115,21 @@
   color: white;
 }
 
-.answer-button-text {
+.answer-button-text,
+.restart-button-text {
   font-size: var(--paragraph-font);
 }
 
 .start-button:hover,
-.next-button:hover {
+.next-button:hover,
+.restart-button:hover {
   cursor: pointer;
 }
 
 .start-button-wrapper:hover,
-.next-button-wrapper:hover {
-  transform: scale(1.02);
+.next-button-wrapper:hover,
+.restart-button:hover {
+  transform: scale(1.01);
 }
 
 .back-button:hover {

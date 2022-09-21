@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import RestartButton from "./buttons/RestartButton";
 
 const ThankYouSlide = ({
   slideNumber,
@@ -13,7 +14,7 @@ const ThankYouSlide = ({
       setThankYouSlideClassName("fade-in-from-right");
   }, [slideNumber]);
 
-  const handleReset = () => {
+  const handleRestart = () => {
     localStorage.setItem("questionnaireCompleted", "false");
     setSlideNumber((s) => ({ previous: 0, current: 0 }));
     setSelectedAnswers(Array(5).fill({}));
@@ -27,7 +28,7 @@ const ThankYouSlide = ({
   return (
     <div className={`thank-you-screen ${thankYouSlideClassName}`}>
       <p>Vielen Dank für Ihre Antwort!</p>
-      <button onClick={handleReset}>Gehen Sie wieder</button>
+      <RestartButton onClick={handleRestart} text="Gehen Sie wieder" />
     </div>
   );
 };
