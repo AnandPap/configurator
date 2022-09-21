@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data/questionnaireData.json";
 import Slide from "./Slide";
 import WelcomeScreen from "./WelcomeScreen";
@@ -10,14 +10,27 @@ const Slider = () => {
     previous: 0,
     current: 0,
   });
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(4).fill({}));
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(5).fill({}));
+  const [formData, setFormData] = useState({
+    address: "",
+    telefon: "",
+    email: "",
+  });
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("questionnaireCompleted")) === true)
+      setSlideNumber((s) => ({ ...s, current: 6 }));
+    else localStorage.setItem("questionnaireCompleted", "false");
+  }, []);
 
   return (
     <div className="App">
-      <WelcomeScreen
-        slideNumber={slideNumber}
-        setSlideNumber={setSlideNumber}
-      />
+      {slideNumber.current === 0 && (
+        <WelcomeScreen
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
+        />
+      )}
       {slideNumber.current > 0 && slideNumber.current < 6 && (
         <div className="slide-header fade-in-from-right">
           <BackButton
@@ -41,9 +54,18 @@ const Slider = () => {
           questionNumber={i + 1}
           selectedAnswers={selectedAnswers}
           setSelectedAnswers={setSelectedAnswers}
+          formData={formData}
+          setFormData={setFormData}
         />
       ))}
-      {slideNumber.current === 6 && <ThankYouSlide slideNumber={slideNumber} />}
+      {slideNumber.current === 6 && (
+        <ThankYouSlide
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
+          setSelectedAnswers={setSelectedAnswers}
+          setFormData={setFormData}
+        />
+      )}
     </div>
   );
 };

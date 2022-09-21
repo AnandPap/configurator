@@ -10,7 +10,7 @@ const WelcomeScreen = ({ slideNumber, setSlideNumber }) => {
   useEffect(() => {
     if (slideNumber.current > 0 && slideNumber.previous === 0)
       setWelcomeScreenClassName("fade-out-to-left");
-    else if (slideNumber.current === 0 && slideNumber.previous > 0)
+    else if (slideNumber.current === 0)
       setWelcomeScreenClassName("fade-in-from-center");
   }, [slideNumber]);
 

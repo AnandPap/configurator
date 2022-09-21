@@ -11,7 +11,11 @@ const Slide = ({
   setSlideNumber,
   selectedAnswers,
   setSelectedAnswers,
+  formData,
+  setFormData,
 }) => {
+  const [questionClassName, setQuestionClassName] = useState("hide");
+
   useEffect(() => {
     if (
       slideNumber.current === questionNumber &&
@@ -26,8 +30,6 @@ const Slide = ({
     }
     // eslint-disable-next-line
   }, [slideNumber]);
-
-  const [questionClassName, setQuestionClassName] = useState("hide");
 
   const answerOnClickHandler = (answer) => {
     setSlideNumber({
@@ -80,6 +82,8 @@ const Slide = ({
               element={element}
               selectedAnswers={selectedAnswers}
               answerOnClickHandler={answerOnClickHandler}
+              formData={formData}
+              setFormData={setFormData}
             />
           ) : (
             <NextButton

@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 const FormField = ({
+  i,
   formFieldTitle,
   type,
+  formData,
   setFormData,
   warningMessage,
   setWarningMessage,
 }) => {
-  const [inputText, setInputText] = useState("");
-
   const inputHandler = (e) => {
     if (warningMessage !== "") setWarningMessage("");
-    setInputText(e.target.value);
     if (type === "text")
       setFormData((s) => ({ ...s, address: e.target.value }));
     else if (type === "number")
@@ -26,7 +25,7 @@ const FormField = ({
         className="form-input"
         type={type}
         placeholder="Antwort hier"
-        value={inputText}
+        value={Object.values(formData)[i]}
         onChange={inputHandler}
       />
     </div>

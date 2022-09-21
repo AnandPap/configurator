@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import NextButton from "./buttons/NextButton";
 import FormField from "./reusable/FormField";
 
-const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
+const FormSlide = ({
+  element,
+  selectedAnswers,
+  answerOnClickHandler,
+  formData,
+  setFormData,
+}) => {
   const [warningMessage, setWarningMessage] = useState("");
-  const [formData, setFormData] = useState({
-    address: "",
-    telefon: "",
-    email: "",
-  });
+
   const submitHandler = (e) => {
     e.preventDefault();
     let answerMissing = false;
     for (const property in selectedAnswers) {
-      if (Object.values(selectedAnswers[property])[0] === undefined) {
+      if (
+        Object.values(selectedAnswers[property])[0] === undefined &&
+        JSON.parse(property) !== selectedAnswers.length - 1
+      ) {
         answerMissing = true;
         break;
       }
@@ -37,7 +42,8 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
             Object.values(formData)[2]
           )
         ) {
-          answerOnClickHandler();
+          answerOnClickHandler(formData);
+          localStorage.setItem("questionnaireCompleted", "true");
         } else {
           setWarningMessage("E-Mail-Fehler beim Ausfüllen des Formulars!");
         }
@@ -51,8 +57,10 @@ const FormSlide = ({ element, selectedAnswers, answerOnClickHandler }) => {
         {element.fields.map((answer, i) => (
           <FormField
             key={i}
+            i={i}
             formFieldTitle={answer.formFieldTitle}
             type={answer.type}
+            formData={formData}
             setFormData={setFormData}
             warningMessage={warningMessage}
             setWarningMessage={setWarningMessage}
