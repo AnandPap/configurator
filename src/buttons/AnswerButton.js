@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const AnswerButton = ({ i, answerText, onClick, selectedAnswer }) => {
-  const border =
-    selectedAnswer.answerText === answerText ? "border" : "no-border";
+  const [border, setBorder] = useState("no-border");
   const letter =
     i === 1 ? "A" : i === 2 ? "B" : i === 3 ? "C" : i === 4 ? "D" : "E";
+
+  useEffect(() => {
+    if (selectedAnswer.answerText === answerText) setBorder("border");
+  }, []);
+
   return (
-    <div className="answer-button-wrapper" onClick={onClick}>
+    <div
+      className="answer-button-wrapper"
+      onClick={() => {
+        setBorder("border");
+        onClick();
+      }}
+    >
       <button className={`answer-button ${border}`}>
         <div className="answer-circle">
           <p>{letter}</p>
