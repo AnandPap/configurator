@@ -51,7 +51,7 @@
         "question": "Dein Info",
         "fields": [
             {"formFieldTitle": "Dein Adresse: ", "type": "text"},
-            {"formFieldTitle": "TelefonnummerDiese: ", "type": "number"},
+            {"formFieldTitle": "TelefonnummerDiese: ", "type": "tel"},
             {"formFieldTitle": "Email: ", "type": "email"}
         ]
     }

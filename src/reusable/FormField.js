@@ -13,7 +13,7 @@ const FormField = ({
     if (warningMessage !== "") setWarningMessage("");
     if (type === "text")
       setFormData((s) => ({ ...s, address: e.target.value }));
-    else if (type === "number")
+    else if (type === "tel")
       setFormData((s) => ({ ...s, telefon: e.target.value }));
     else setFormData((s) => ({ ...s, [type]: e.target.value }));
   };
