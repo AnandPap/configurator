@@ -29,7 +29,7 @@ const FormSlide = ({
       );
     else {
       for (const property in formData) {
-        if (formData[property === ""]) {
+        if (formData[property] === "") {
           answerMissing = true;
           break;
         }
