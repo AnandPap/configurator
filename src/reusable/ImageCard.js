@@ -8,8 +8,7 @@ const ImageCard = ({
   onClick,
   selectedAnswer,
 }) => {
-  const border =
-    selectedAnswer.imageTitle === imageTitle ? "border" : "no-border";
+  const border = selectedAnswer.includes(imageTitle) ? "border" : "no-border";
   const letter =
     i === 1 ? "A" : i === 2 ? "B" : i === 3 ? "C" : i === 4 ? "D" : "E";
   return (

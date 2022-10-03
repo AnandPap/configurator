@@ -74,6 +74,7 @@ const FormSlide = ({
           />
         ))}
         <NextButton
+          type="submit"
           text="SENDEN"
           onClick={submitHandler}
           className="send-btn"
