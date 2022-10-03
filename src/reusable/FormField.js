@@ -22,6 +22,9 @@ const FormField = ({
     <div className="form-field">
       <div className="form-field-title">{formFieldTitle} *</div>
       <input
+        name={
+          type === "email" ? "email" : type === "tel" ? "telephone" : "address"
+        }
         className="form-input"
         type={type}
         placeholder="Antwort hier"

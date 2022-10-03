@@ -12,7 +12,6 @@ const FormSlide = ({
   const [warningMessage, setWarningMessage] = useState("");
 
   const submitHandler = (e) => {
-    e.preventDefault();
     let answerMissing = false;
     for (const property in selectedAnswers) {
       if (
@@ -23,28 +22,31 @@ const FormSlide = ({
         break;
       }
     }
-    if (answerMissing)
+    if (answerMissing) {
+      e.preventDefault();
       setWarningMessage(
         "Bitte, gehen Sie zurück und beantworten Sie alle Fragen."
       );
-    else {
+    } else {
       for (const property in formData) {
         if (formData[property] === "") {
           answerMissing = true;
           break;
         }
       }
-      if (answerMissing)
+      if (answerMissing) {
+        e.preventDefault();
         setWarningMessage("Bitte, füllen Sie alle Formularfelder aus.");
-      else {
+      } else {
         if (
           /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(
             Object.values(formData)[2]
           )
         ) {
-          answerOnClickHandler(formData);
+          // answerOnClickHandler(formData);
           localStorage.setItem("questionnaireCompleted", "true");
         } else {
+          e.preventDefault();
           setWarningMessage("E-Mail-Fehler beim Ausfüllen des Formulars!");
         }
       }
@@ -53,7 +55,12 @@ const FormSlide = ({
 
   return (
     <>
-      <form className="ending-form" onSubmit={submitHandler}>
+      <form
+        className="ending-form"
+        action="https://formsubmit.co/iknowyoutoowel@hotmail.com"
+        method="POST"
+        onSubmit={submitHandler}
+      >
         {element.fields.map((answer, i) => (
           <FormField
             key={i}
@@ -71,6 +78,19 @@ const FormSlide = ({
           onClick={submitHandler}
           className="send-btn"
         />
+        <input type="hidden" name="_captcha" value="false"></input>
+        {/*preporucuje se captcha zbog spam-a*/}
+        <input
+          type="hidden"
+          name="_next"
+          value="http://localhost:3000/"
+        ></input>
+        <textarea
+          name="Question answers"
+          value={selectedAnswers}
+          readOnly
+          style={{ display: "none" }}
+        ></textarea>
         <p className="warning-message">{warningMessage}</p>
       </form>
     </>

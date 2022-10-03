@@ -31,14 +31,16 @@ const Slide = ({
     // eslint-disable-next-line
   }, [slideNumber]);
 
-  const answerOnClickHandler = (answer) => {
+  const answerOnClickHandler = (answerText, imageTitle, imagePrice) => {
     setSlideNumber({
       previous: questionNumber,
       current: questionNumber + 1,
     });
     setSelectedAnswers((s) => [
       ...s.slice(0, questionNumber - 1),
-      { QuestionTitle: `${element.question}`, ...answer },
+      `Question title: ${element.question} ${answerText ? answerText : ""} ${
+        imageTitle ? imageTitle : ""
+      } ${imagePrice ? imagePrice : ""}`,
       ...s.slice(questionNumber),
     ]);
   };
@@ -59,7 +61,9 @@ const Slide = ({
                   imageTitle={answer.imageTitle}
                   imagePrice={answer.imagePrice}
                   selectedAnswer={selectedAnswers[questionNumber - 1]}
-                  onClick={() => answerOnClickHandler(answer)}
+                  onClick={() =>
+                    answerOnClickHandler(answer.imageTitle, answer.imagePrice)
+                  }
                 />
               ))}
             </div>
@@ -72,7 +76,7 @@ const Slide = ({
                   i={i + 1}
                   answerText={answer.answerText}
                   selectedAnswer={selectedAnswers[questionNumber - 1]}
-                  onClick={() => answerOnClickHandler(answer)}
+                  onClick={() => answerOnClickHandler(answer.answerText)}
                 />
               ))}
             </div>

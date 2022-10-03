@@ -10,7 +10,7 @@ const Slider = () => {
     previous: 0,
     current: 0,
   });
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(5).fill({}));
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(5).fill(""));
   const [formData, setFormData] = useState({
     address: "",
     telefon: "",
@@ -22,6 +22,8 @@ const Slider = () => {
       setSlideNumber((s) => ({ ...s, current: 6 }));
     else localStorage.setItem("questionnaireCompleted", "false");
   }, []);
+
+  console.log(selectedAnswers);
 
   return (
     <div className="App">
