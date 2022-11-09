@@ -7,7 +7,6 @@ const AnswerButton = ({ i, answerText, onClick, selectedAnswer }) => {
 
   useEffect(() => {
     if (selectedAnswer.includes(answerText)) setBorder("border");
-    console.log(selectedAnswer.includes(answerText), answerText);
     //eslint-disable-next-line
   }, []);
 
