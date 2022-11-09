@@ -23,8 +23,6 @@ const Slider = () => {
     else localStorage.setItem("questionnaireCompleted", "false");
   }, []);
 
-  console.log(selectedAnswers);
-
   return (
     <div className="App">
       {slideNumber.current === 0 && (

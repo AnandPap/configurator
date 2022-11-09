@@ -17,7 +17,7 @@ const ThankYouSlide = ({
   const handleRestart = () => {
     localStorage.setItem("questionnaireCompleted", "false");
     setSlideNumber((s) => ({ previous: 0, current: 0 }));
-    setSelectedAnswers(Array(5).fill({}));
+    setSelectedAnswers(Array(5).fill(""));
     setFormData({
       address: "",
       telefon: "",
