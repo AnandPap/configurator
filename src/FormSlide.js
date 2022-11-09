@@ -84,7 +84,7 @@ const FormSlide = ({
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:3000/"
+          value="https://german-companies-configurator.herokuapp.com/"
         ></input>
         <textarea
           name="Question answers"
