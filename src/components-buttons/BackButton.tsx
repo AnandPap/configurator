@@ -1,6 +1,9 @@
-import React from "react";
+type BackButtonProps = {
+  text: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+};
 
-const BackButton = ({ text, onClick }) => {
+const BackButton = ({ text, onClick }: BackButtonProps) => {
   return (
     <div className="back-button-wrapper">
       <button className="back-button" onClick={onClick}>

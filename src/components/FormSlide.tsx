@@ -1,17 +1,44 @@
-import React, { useState } from "react";
-import NextButton from "./buttons/NextButton";
-import FormField from "./reusable/FormField";
+import React, { useEffect, useState } from "react";
+import NextButton from "../components-buttons/NextButton";
+import FormField from "../components-reusable/FormField";
+import { useAppSelector } from "../redux/hooks";
 
-const FormSlide = ({
-  element,
-  selectedAnswers,
-  answerOnClickHandler,
-  formData,
-  setFormData,
-}) => {
+type FormSlideProps = {
+  slideId: number;
+};
+
+const FormSlide = ({ slideId }: FormSlideProps) => {
+  const formFields = [
+    { formFieldTitle: "Dein Adresse: ", type: "text" },
+    { formFieldTitle: "TelefonnummerDiese: ", type: "tel" },
+    { formFieldTitle: "Email: ", type: "email" },
+  ];
+  const [formData, setFormData] = useState({
+    address: "",
+    telefon: "",
+    email: "",
+  });
   const [warningMessage, setWarningMessage] = useState("");
+  const [className, setClassName] = useState("hide");
+  const selectedAnswers = useAppSelector(
+    (state) => state.questionnaire.selectedAnswers
+  );
+  const slideNumber = useAppSelector(
+    (state) => state.questionnaire.slideNumber
+  );
 
-  const submitHandler = (e) => {
+  useEffect(() => {
+    if (slideNumber.current === slideId && slideNumber.previous === slideId - 1)
+      setClassName("fade-in-from-right");
+    else if (
+      slideNumber.current === slideId &&
+      slideNumber.previous === slideId + 1
+    ) {
+      setClassName("fade-in-from-left");
+    }
+  }, [slideNumber]);
+
+  const submitHandler = (e: React.FormEvent) => {
     let answerMissing = false;
     for (const property in selectedAnswers) {
       if (
@@ -54,14 +81,15 @@ const FormSlide = ({
   };
 
   return (
-    <>
+    <div className={`slide ${className}`}>
+      <h1 className="slide-heading">Dein Info</h1>
       <form
         className="ending-form"
         action="https://formsubmit.co/iknowyoutoowel@hotmail.com"
         method="POST"
         onSubmit={submitHandler}
       >
-        {element.fields.map((answer, i) => (
+        {formFields.map((answer, i) => (
           <FormField
             key={i}
             i={i}
@@ -94,7 +122,7 @@ const FormSlide = ({
         ></textarea>
         <p className="warning-message">{warningMessage}</p>
       </form>
-    </>
+    </div>
   );
 };
 

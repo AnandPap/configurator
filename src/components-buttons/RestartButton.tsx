@@ -1,8 +1,11 @@
-import React from "react";
+type NextButtonProps = {
+  text: string;
+  onClick: () => void;
+};
 
-const RestartButton = ({ text, onClick, className }) => {
+const RestartButton = ({ text, onClick }: NextButtonProps) => {
   return (
-    <div className={`restart-button-wrapper ${className}`}>
+    <div className={`restart-button-wrapper`}>
       <button className="restart-button" onClick={onClick}>
         <p className="restart-button-text">{text}</p>
       </button>

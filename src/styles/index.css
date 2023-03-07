@@ -232,7 +232,7 @@ body {
 }
 
 .border {
-  border: 2px solid white;
+  border: 5px solid white;
 }
 
 .warning-message {
@@ -264,6 +264,7 @@ select:-webkit-autofill:focus {
 }
 
 input[type="number"] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 

@@ -1,58 +1,62 @@
 {
-    "slide1": {
-        "type": "images",
-        "question": "Art der Immobilie",
-        "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
-        "answers": [
-            {"imageURL": "slide1-img1", "imageTitle": "Einfamilienhaus", "imagePrice": "ab 1600 EUR"},
-            {"imageURL": "slide1-img2", "imageTitle": "Mehrfamilienhaus", "imagePrice": "ab 2600 EUR"},
-            {"imageURL": "slide1-img3", "imageTitle": "Gewerbeobjekt", "imagePrice": "ab 3400 EUR"},
-            {"imageURL": "slide1-img4", "imageTitle": "Spezial?"}
-        ]
-    },
-    "slide2": {
-        "type": "buttons",
-        "question": "Wie groß ist das Gewerbeobjekte?",
-        "answers": [
-            {"answerText": "200-500 qm"},
-            {"answerText": "500-1000 qm"},
-            {"answerText": "1000-1500 qm"},
-            {"answerText": "1500-3000 qm"},
-            {"answerText": "über 3000 qm"}
-        ]
-    },
-    "slid3": {
-        "type": "buttons",
-        "question": "Fassadenart",
-        "introduction": "Wahlen Sie ihre Fassadenart aus um die Kalkulation besser einzuschätzen.",
-        "answers": [
-            {"answerText": "Putzfassade"},
-            {"answerText": "Klinker"},
-            {"answerText": "Kalksandsteinfassade"},
-            {"answerText": "Metallfassade"},
-            {"answerText": "Natursteinfassade"},
-            {"answerText": "Andere"}
-        ]
-    },
-    "slide4": {
-        "type": "images",
-        "question": "Verschmutzungsart",
-        "introduction": "Auswahl: Wie hoch ist der Verschmutzungsgrad Ihrer Fassade?",
-        "answers": [
-            {"imageURL": "slide4-img1", "imageTitle": "Flecken"},
-            {"imageURL": "slide4-img2", "imageTitle": "Färbungen"},
-            {"imageURL": "slide4-img3", "imageTitle": "Schimmel"},
-            {"imageURL": "slide4-img4", "imageTitle": "Moos"},
-            {"imageURL": "slide4-img5", "imageTitle": "Graffiti"}
-        ]
-    },
-    "slide5": {
-        "type": "form",
-        "question": "Dein Info",
-        "fields": [
-            {"formFieldTitle": "Dein Adresse: ", "type": "text"},
-            {"formFieldTitle": "TelefonnummerDiese: ", "type": "tel"},
-            {"formFieldTitle": "Email: ", "type": "email"}
-        ]
-    }
+  "slide1": {
+    "type": "images",
+    "title": "Art der Immobilie",
+    "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
+    "answers": [
+      {
+        "imageURL": "slide1-img1",
+        "imageTitle": "Einfamilienhaus",
+        "imagePrice": "ab 1600 EUR"
+      },
+      {
+        "imageURL": "slide1-img2",
+        "imageTitle": "Mehrfamilienhaus",
+        "imagePrice": "ab 2600 EUR"
+      },
+      {
+        "imageURL": "slide1-img3",
+        "imageTitle": "Gewerbeobjekt",
+        "imagePrice": "ab 3400 EUR"
+      },
+      { "imageURL": "slide1-img4", "imageTitle": "Spezial?" }
+    ]
+  },
+  "slide2": {
+    "type": "buttons",
+    "title": "Wie groß ist das Gewerbeobjekte?",
+    "introduction": "",
+    "answers": [
+      { "answerText": "200-500 qm" },
+      { "answerText": "500-1000 qm" },
+      { "answerText": "1000-1500 qm" },
+      { "answerText": "1500-3000 qm" },
+      { "answerText": "über 3000 qm" }
+    ]
+  },
+  "slide3": {
+    "type": "buttons",
+    "title": "Fassadenart",
+    "introduction": "Wahlen Sie ihre Fassadenart aus um die Kalkulation besser einzuschätzen.",
+    "answers": [
+      { "answerText": "Putzfassade" },
+      { "answerText": "Klinker" },
+      { "answerText": "Kalksandsteinfassade" },
+      { "answerText": "Metallfassade" },
+      { "answerText": "Natursteinfassade" },
+      { "answerText": "Andere" }
+    ]
+  },
+  "slide4": {
+    "type": "images",
+    "title": "Verschmutzungsart",
+    "introduction": "Auswahl: Wie hoch ist der Verschmutzungsgrad Ihrer Fassade?",
+    "answers": [
+      { "imageURL": "slide4-img1", "imageTitle": "Flecken" },
+      { "imageURL": "slide4-img2", "imageTitle": "Färbungen" },
+      { "imageURL": "slide4-img3", "imageTitle": "Schimmel" },
+      { "imageURL": "slide4-img4", "imageTitle": "Moos" },
+      { "imageURL": "slide4-img5", "imageTitle": "Graffiti" }
+    ]
+  }
 }
