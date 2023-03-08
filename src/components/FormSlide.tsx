@@ -37,7 +37,7 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
   }, [slideNumber]);
 
   const submitHandler = (e: React.FormEvent) => {
-    for (let i = 0; i < selectedAnswers.length; i++) {
+    for (let i = 0; i < selectedAnswers.length - 1; i++) {
       if (!selectedAnswers[i]) {
         e.preventDefault();
         setWarningMessage(
@@ -59,7 +59,7 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
         text += Object.keys(formData)[i] + ": " + Object.values(formData)[i];
         if (i !== 2) text += ", ";
       }
-      dispatch(updateSelectedAnswers({ id: slideId, text: text }));
+      // dispatch(updateSelectedAnswers({ id: slideId, text: text }));
       localStorage.setItem("questionnaireCompleted", "true");
     } else {
       e.preventDefault();

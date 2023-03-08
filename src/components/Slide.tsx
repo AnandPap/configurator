@@ -45,7 +45,7 @@ const Slide = ({ slide, slideId }: SlideProps) => {
     dispatch(
       updateSelectedAnswers({
         id: slideId,
-        text: `${slideId}. Question: ${question} ${slideId}. Answer: ${answer} \n`,
+        text: `\n${slideId}. Question: ${question}, Answer: ${answer}`,
       })
     );
   };
