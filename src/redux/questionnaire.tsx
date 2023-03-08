@@ -31,7 +31,7 @@ export type formDataType = {
 };
 
 export const initialState: initialStateType = {
-  selectedAnswers: Array(5).fill(""),
+  selectedAnswers: Array(4).fill(""),
   slideNumber: { previous: 0, current: 0 },
   formData: {
     address: "",

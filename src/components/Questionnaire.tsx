@@ -13,7 +13,7 @@ const Questionnaire = () => {
   const slideNumber = useAppSelector(
     (state) => state.questionnaire.slideNumber
   );
-  const NUMBER_OF_SLIDES = Object.keys(data).length;
+  const NUMBER_OF_SLIDES = Object.keys(data).length + 1;
 
   useEffect(() => {
     const local = localStorage.getItem("questionnaireCompleted");
@@ -44,10 +44,10 @@ const Questionnaire = () => {
       {Object.values(data).map((slide, i) => (
         <Slide key={i} slide={slide} slideId={i + 1} />
       ))}
-      {slideNumber.current === NUMBER_OF_SLIDES + 1 && (
-        <FormSlide slideId={NUMBER_OF_SLIDES + 1} />
+      {slideNumber.current === NUMBER_OF_SLIDES && (
+        <FormSlide slideId={NUMBER_OF_SLIDES} />
       )}
-      {slideNumber.current === NUMBER_OF_SLIDES + 2 && <ThankYouScreen />}
+      {slideNumber.current === NUMBER_OF_SLIDES + 1 && <ThankYouScreen />}
     </div>
   );
 };

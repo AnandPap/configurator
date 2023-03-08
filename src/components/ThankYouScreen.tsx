@@ -21,7 +21,7 @@ const ThankYouScreen = () => {
   const handleRestart = () => {
     localStorage.setItem("questionnaireCompleted", "false");
     dispatch(setSlideNumber({ previous: 0, current: 0 }));
-    dispatch(resetSelectedAnswers(Array(5).fill("")));
+    dispatch(resetSelectedAnswers(Array(4).fill("")));
     dispatch(
       setFormData({
         address: "",

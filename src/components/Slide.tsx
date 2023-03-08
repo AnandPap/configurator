@@ -19,6 +19,7 @@ const Slide = ({ slide, slideId }: SlideProps) => {
     (state) => state.questionnaire.slideNumber
   );
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     if (slideNumber.current === slideId && slideNumber.previous === slideId - 1)
       setClassName("fade-in-from-right");
@@ -44,7 +45,7 @@ const Slide = ({ slide, slideId }: SlideProps) => {
     dispatch(
       updateSelectedAnswers({
         id: slideId,
-        text: `${slideId}. Question: ${question} Answer: ${answer}`,
+        text: `${slideId}. Question: ${question} ${slideId}. Answer: ${answer} \n`,
       })
     );
   };

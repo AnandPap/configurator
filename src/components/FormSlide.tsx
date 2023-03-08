@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NextButton from "../components-buttons/NextButton";
 import FormField from "../components-reusable/FormField";
-import { useAppSelector } from "../redux/hooks";
-import { formDataType } from "../redux/questionnaire";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { formDataType, updateSelectedAnswers } from "../redux/questionnaire";
 
 type FormSlideProps = {
   slideId: number;
@@ -23,6 +23,7 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
     (state) => state.questionnaire.slideNumber
   );
   const formData = useAppSelector((state) => state.questionnaire.formData);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (slideNumber.current === slideId && slideNumber.previous === slideId - 1)
@@ -36,44 +37,33 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
   }, [slideNumber]);
 
   const submitHandler = (e: React.FormEvent) => {
-    let answerMissing = false;
-    for (const property in selectedAnswers) {
-      if (
-        Object.values(selectedAnswers[property])[0] === undefined &&
-        JSON.parse(property) !== selectedAnswers.length - 1
-      ) {
-        answerMissing = true;
-        break;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i]) {
+        e.preventDefault();
+        setWarningMessage(
+          "Bitte, gehen Sie zurück und beantworten Sie alle Fragen."
+        );
+        return;
       }
     }
-    if (answerMissing) {
-      e.preventDefault();
-      setWarningMessage(
-        "Bitte, gehen Sie zurück und beantworten Sie alle Fragen."
-      );
-    } else {
-      for (const property in formData) {
-        if (formData[property as keyof formDataType] === "") {
-          answerMissing = true;
-          break;
-        }
-      }
-      if (answerMissing) {
+    for (const key in formData) {
+      if (formData[key as keyof formDataType] === "") {
         e.preventDefault();
         setWarningMessage("Bitte, füllen Sie alle Formularfelder aus.");
-      } else {
-        if (
-          /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(
-            Object.values(formData)[2]
-          )
-        ) {
-          // answerOnClickHandler(formData);
-          localStorage.setItem("questionnaireCompleted", "true");
-        } else {
-          e.preventDefault();
-          setWarningMessage("E-Mail-Fehler beim Ausfüllen des Formulars!");
-        }
+        return;
       }
+    }
+    if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(formData.email)) {
+      let text = "User info: ";
+      for (let i = 0; i < 3; i++) {
+        text += Object.keys(formData)[i] + ": " + Object.values(formData)[i];
+        if (i !== 2) text += ", ";
+      }
+      dispatch(updateSelectedAnswers({ id: slideId, text: text }));
+      localStorage.setItem("questionnaireCompleted", "true");
+    } else {
+      e.preventDefault();
+      setWarningMessage("E-Mail-Fehler beim Ausfüllen des Formulars!");
     }
   };
 
