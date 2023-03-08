@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NextButton from "../components-buttons/NextButton";
 import FormField from "../components-reusable/FormField";
 import { useAppSelector } from "../redux/hooks";
+import { formDataType } from "../redux/questionnaire";
 
 type FormSlideProps = {
   slideId: number;
@@ -13,11 +14,6 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
     { formFieldTitle: "TelefonnummerDiese: ", type: "tel" },
     { formFieldTitle: "Email: ", type: "email" },
   ];
-  const [formData, setFormData] = useState({
-    address: "",
-    telefon: "",
-    email: "",
-  });
   const [warningMessage, setWarningMessage] = useState("");
   const [className, setClassName] = useState("hide");
   const selectedAnswers = useAppSelector(
@@ -26,6 +22,7 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
   const slideNumber = useAppSelector(
     (state) => state.questionnaire.slideNumber
   );
+  const formData = useAppSelector((state) => state.questionnaire.formData);
 
   useEffect(() => {
     if (slideNumber.current === slideId && slideNumber.previous === slideId - 1)
@@ -56,7 +53,7 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
       );
     } else {
       for (const property in formData) {
-        if (formData[property] === "") {
+        if (formData[property as keyof formDataType] === "") {
           answerMissing = true;
           break;
         }
@@ -95,8 +92,6 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
             i={i}
             formFieldTitle={answer.formFieldTitle}
             type={answer.type}
-            formData={formData}
-            setFormData={setFormData}
             warningMessage={warningMessage}
             setWarningMessage={setWarningMessage}
           />

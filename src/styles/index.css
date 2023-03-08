@@ -116,77 +116,77 @@ body {
   text-shadow: 0px 0px 2px black;
 }
 
-.slide1-img1 {
+.slide1-image1 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/1st-slide/1.jpg");
+    url("/src/assets/images/slide1/slide1-image1.jpg");
 }
-.slide1-img2 {
+.slide1-image2 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/1st-slide/2.jpg");
+    url("/src/assets/images/slide1/slide1-image2.jpg");
 }
-.slide1-img3 {
+.slide1-image3 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/1st-slide/3.jpg");
+    url("/src/assets/images/slide1/slide1-image3.jpg");
 }
-.slide1-img4 {
+.slide1-image4 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/1st-slide/4.jpg");
+    url("/src/assets/images/slide1/slide1-image4.jpg");
 }
-.slide4-img1 {
+.slide4-image1 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/4th-slide/1.png");
+    url("/src/assets/images/slide4/slide4-image1.png");
 }
-.slide4-img2 {
+.slide4-image2 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/4th-slide/2.png");
+    url("/src/assets/images/slide4/slide4-image2.png");
 }
-.slide4-img3 {
+.slide4-image3 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/4th-slide/3.png");
+    url("/src/assets/images/slide4/slide4-image3.png");
 }
-.slide4-img4 {
+.slide4-image4 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/4th-slide/4.png");
+    url("/src/assets/images/slide4/slide4-image4.png");
 }
-.slide4-img5 {
+.slide4-image5 {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.5)
     ),
-    url("/public/images/4th-slide/5.png");
+    url("/src/assets/images/slide4/slide4-image5.png");
 }
 
 .ending-form {
@@ -232,7 +232,7 @@ body {
 }
 
 .border {
-  border: 5px solid white;
+  border: 3px solid white;
 }
 
 .warning-message {

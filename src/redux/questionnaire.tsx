@@ -1,49 +1,61 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-type setSelectedAnswersPayloadType = {
-  type: string;
+type updateSelectedAnswersPayloadType = {
   id: number;
   text: string;
 };
-
 type setSlideNumberPayloadType = {
   previous?: number;
   current?: number;
 };
 
-type initialStateType = {
-  selectedAnswers: string[];
-  slideNumber: slideNumberType;
+type setFormDataPayloadType = {
+  address?: string;
+  telefon?: string;
+  email?: string;
 };
 
-type slideNumberType = {
-  previous: number;
-  current: number;
+type initialStateType = {
+  selectedAnswers: string[];
+  slideNumber: {
+    previous: number;
+    current: number;
+  };
+  formData: formDataType;
+};
+export type formDataType = {
+  address: string;
+  telefon: string;
+  email: string;
 };
 
 export const initialState: initialStateType = {
   selectedAnswers: Array(5).fill(""),
   slideNumber: { previous: 0, current: 0 },
+  formData: {
+    address: "",
+    telefon: "",
+    email: "",
+  },
 };
 
 export const questionnaireSlice = createSlice({
   name: "questionnaire",
   initialState,
   reducers: {
-    setSelectedAnswers: (
+    resetSelectedAnswers: (state, action: PayloadAction<string[]>) => {
+      state.selectedAnswers = action.payload;
+    },
+    updateSelectedAnswers: (
       state,
-      action: PayloadAction<setSelectedAnswersPayloadType>
+      action: PayloadAction<updateSelectedAnswersPayloadType>
     ) => {
-      if (action.payload.type === "update")
-        state.selectedAnswers = [
-          ...state.selectedAnswers.slice(0, action.payload.id - 1),
-          action.payload.text,
-          ...state.selectedAnswers.slice(action.payload.id - 1),
-        ];
-      else if (action.payload.type === "update")
-        state.selectedAnswers = Array(5).fill("");
-      else state.selectedAnswers = state.selectedAnswers;
+      state.selectedAnswers = [
+        ...state.selectedAnswers.slice(0, action.payload.id - 1),
+        action.payload.text,
+        ...state.selectedAnswers.slice(action.payload.id),
+      ];
     },
     setSlideNumber: (
       state,
@@ -51,10 +63,20 @@ export const questionnaireSlice = createSlice({
     ) => {
       state.slideNumber = { ...state.slideNumber, ...action.payload };
     },
+    setFormData: (state, action: PayloadAction<setFormDataPayloadType>) => {
+      state.formData = {
+        ...state.formData,
+        ...action.payload,
+      };
+    },
   },
 });
 
-export const { setSelectedAnswers, setSlideNumber } =
-  questionnaireSlice.actions;
+export const {
+  resetSelectedAnswers,
+  updateSelectedAnswers,
+  setSlideNumber,
+  setFormData,
+} = questionnaireSlice.actions;
 
 export default questionnaireSlice.reducer;

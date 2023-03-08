@@ -16,7 +16,7 @@ const AnswerButton = ({
   const [className, setClassName] = useState("no-border");
 
   useEffect(() => {
-    if (selectedAnswer === text) setClassName("border");
+    if (selectedAnswer.includes(text)) setClassName("border");
   }, []);
 
   return (

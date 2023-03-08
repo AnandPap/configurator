@@ -5,21 +5,21 @@
     "introduction": "Auswahl treffen: Um eine besser Einschaftzung zu machen. Wahlen Sie hier aus weiche Immobilie Sie gereinigt haben mochten.",
     "answers": [
       {
-        "imageURL": "slide1-img1",
+        "imageURL": "slide1-image1",
         "imageTitle": "Einfamilienhaus",
         "imagePrice": "ab 1600 EUR"
       },
       {
-        "imageURL": "slide1-img2",
+        "imageURL": "slide1-image2",
         "imageTitle": "Mehrfamilienhaus",
         "imagePrice": "ab 2600 EUR"
       },
       {
-        "imageURL": "slide1-img3",
+        "imageURL": "slide1-image3",
         "imageTitle": "Gewerbeobjekt",
         "imagePrice": "ab 3400 EUR"
       },
-      { "imageURL": "slide1-img4", "imageTitle": "Spezial?" }
+      { "imageURL": "slide1-image4", "imageTitle": "Spezial?" }
     ]
   },
   "slide2": {
@@ -52,11 +52,11 @@
     "title": "Verschmutzungsart",
     "introduction": "Auswahl: Wie hoch ist der Verschmutzungsgrad Ihrer Fassade?",
     "answers": [
-      { "imageURL": "slide4-img1", "imageTitle": "Flecken" },
-      { "imageURL": "slide4-img2", "imageTitle": "Färbungen" },
-      { "imageURL": "slide4-img3", "imageTitle": "Schimmel" },
-      { "imageURL": "slide4-img4", "imageTitle": "Moos" },
-      { "imageURL": "slide4-img5", "imageTitle": "Graffiti" }
+      { "imageURL": "slide4-image1", "imageTitle": "Flecken" },
+      { "imageURL": "slide4-image2", "imageTitle": "Färbungen" },
+      { "imageURL": "slide4-image3", "imageTitle": "Schimmel" },
+      { "imageURL": "slide4-image4", "imageTitle": "Moos" },
+      { "imageURL": "slide4-image5", "imageTitle": "Graffiti" }
     ]
   }
 }

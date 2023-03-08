@@ -1,6 +1,9 @@
-import React from "react";
+type IconProps = {
+  iconURL: string;
+  className: string;
+};
 
-const Icon = ({ iconURL, className }) => {
+const Icon = ({ iconURL, className }: IconProps) => {
   return <img src={iconURL} alt="" className={className}></img>;
 };
 

@@ -44,10 +44,10 @@ const Questionnaire = () => {
       {Object.values(data).map((slide, i) => (
         <Slide key={i} slide={slide} slideId={i + 1} />
       ))}
-      {slideNumber.current === NUMBER_OF_SLIDES && (
-        <FormSlide slideId={NUMBER_OF_SLIDES} />
+      {slideNumber.current === NUMBER_OF_SLIDES + 1 && (
+        <FormSlide slideId={NUMBER_OF_SLIDES + 1} />
       )}
-      {slideNumber.current === NUMBER_OF_SLIDES + 1 && <ThankYouScreen />}
+      {slideNumber.current === NUMBER_OF_SLIDES + 2 && <ThankYouScreen />}
     </div>
   );
 };

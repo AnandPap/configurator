@@ -3,7 +3,7 @@ import AnswerButton from "../components-buttons/AnswerButton";
 import ImageCard from "../components-reusable/ImageCard";
 import NextButton from "../components-buttons/NextButton";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { setSelectedAnswers, setSlideNumber } from "../redux/questionnaire";
+import { updateSelectedAnswers, setSlideNumber } from "../redux/questionnaire";
 
 type SlideProps = {
   slide: any;
@@ -19,7 +19,6 @@ const Slide = ({ slide, slideId }: SlideProps) => {
     (state) => state.questionnaire.slideNumber
   );
   const dispatch = useAppDispatch();
-
   useEffect(() => {
     if (slideNumber.current === slideId && slideNumber.previous === slideId - 1)
       setClassName("fade-in-from-right");
@@ -43,8 +42,7 @@ const Slide = ({ slide, slideId }: SlideProps) => {
       })
     );
     dispatch(
-      setSelectedAnswers({
-        type: "update",
+      updateSelectedAnswers({
         id: slideId,
         text: `Question title: ${slide.title} ${text ? text : ""} ${
           imageTitle ? imageTitle : ""
