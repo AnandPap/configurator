@@ -31,9 +31,9 @@ const Slide = ({ slide, slideId }: SlideProps) => {
   }, [slideNumber]);
 
   const answerOnClickHandler = (
-    text?: string,
-    imageTitle?: string,
-    imagePrice?: number
+    slideId: number,
+    question: string,
+    answer: string
   ) => {
     dispatch(
       setSlideNumber({
@@ -44,9 +44,7 @@ const Slide = ({ slide, slideId }: SlideProps) => {
     dispatch(
       updateSelectedAnswers({
         id: slideId,
-        text: `Question title: ${slide.title} ${text ? text : ""} ${
-          imageTitle ? imageTitle : ""
-        } ${imagePrice ? imagePrice : ""}`,
+        text: `${slideId}. Question: ${question} Answer: ${answer}`,
       })
     );
   };
@@ -68,7 +66,11 @@ const Slide = ({ slide, slideId }: SlideProps) => {
                   imagePrice={answer.imagePrice}
                   selectedAnswer={selectedAnswers[slideId - 1]}
                   onClick={() =>
-                    answerOnClickHandler(answer.imageTitle, answer.imagePrice)
+                    answerOnClickHandler(
+                      slideId,
+                      slide.title,
+                      answer.imageTitle + " " + answer.imagePrice
+                    )
                   }
                 />
               ))}
@@ -82,7 +84,13 @@ const Slide = ({ slide, slideId }: SlideProps) => {
                   i={i + 1}
                   text={answer.answerText}
                   selectedAnswer={selectedAnswers[slideId - 1]}
-                  onClick={() => answerOnClickHandler(answer.answerText)}
+                  onClick={() =>
+                    answerOnClickHandler(
+                      slideId,
+                      slide.title,
+                      answer.answerText
+                    )
+                  }
                 />
               ))}
             </div>
