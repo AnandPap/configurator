@@ -54,12 +54,12 @@ const FormSlide = ({ slideId }: FormSlideProps) => {
       }
     }
     if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(formData.email)) {
-      let text = "User info: ";
+      let text = "\nUser info: ";
       for (let i = 0; i < 3; i++) {
         text += Object.keys(formData)[i] + ": " + Object.values(formData)[i];
         if (i !== 2) text += ", ";
       }
-      // dispatch(updateSelectedAnswers({ id: slideId, text: text }));
+      dispatch(updateSelectedAnswers({ id: slideId, text: text }));
       localStorage.setItem("questionnaireCompleted", "true");
     } else {
       e.preventDefault();
