@@ -66,13 +66,13 @@ const Slide = ({ slide, slideId }: SlideProps) => {
                   imageTitle={answer.imageTitle}
                   imagePrice={answer.imagePrice}
                   selectedAnswer={selectedAnswers[slideId - 1]}
-                  onClick={() =>
-                    answerOnClickHandler(
-                      slideId,
-                      slide.title,
-                      answer.imageTitle + " " + answer.imagePrice
-                    )
-                  }
+                  onClick={() => {
+                    let answerText;
+                    if (answer.imagePrice)
+                      answerText = answer.imageTitle + " " + answer.imagePrice;
+                    else answerText = answer.imageTitle;
+                    answerOnClickHandler(slideId, slide.title, answerText);
+                  }}
                 />
               ))}
             </div>
